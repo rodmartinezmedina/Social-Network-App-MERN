@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const gravatar = require("gravatar");
 const { check, validationResult } = require("express-validator");
 
 const User = require("../../models/UserModel");
@@ -30,8 +31,26 @@ router.post(
     try {
       let user = await User.findOne({ email: email });
       //See if users exist
+      if (user) {
+        res.status(400).json({ errors: [{ msg: "User already exists" }] });
+      }
 
       //Get user gravatar
+      const avatar = gravatar.url(email, {
+        //size
+        s: "200",
+        //rating. not allowed forbidden images like, naked, violence, etc
+        r: "pg",
+        //default. mm gives some sort of icon if image not found
+        d: "mm",
+      });
+
+      user = new User({
+        name,
+        email,
+        avatar,
+        password,
+      });
 
       //Encrypt password
 
@@ -40,7 +59,7 @@ router.post(
       res.send("User route");
     } catch (err) {
       console.error(err.message);
-      res.status(500).send(`Sewrver Error`);
+      res.status(500).send(`Server Error`);
     }
   }
 );
