@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // @route GET api/posts
-// Test route
+// @desc  Test route
 router.get("/", (req, res) => res.send("Posts route"));
 
 module.exports = router;
