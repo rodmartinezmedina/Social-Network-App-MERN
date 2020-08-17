@@ -15,7 +15,7 @@ const PostSchema = new Schema({
     type: String,
   },
   avatar: {
-    type: string,
+    type: String,
   },
   //An array of the users who liked the post.
   //To avoid a user to like the post multiple times
@@ -41,7 +41,7 @@ const PostSchema = new Schema({
         type: String,
       },
       avatar: {
-        type: string,
+        type: String,
       },
     },
   ],
