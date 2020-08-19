@@ -6,7 +6,7 @@ const Navbar = () => {
       <h1>
         <Link to="/">
           {/* <i className="fas fa-terminal"></i> */}
-          <i class="fas fa-code-branch"></i> CodingNetwork
+          <i className="fas fa-code-branch"></i> CodingNetwork
         </Link>
       </h1>
       <ul>
