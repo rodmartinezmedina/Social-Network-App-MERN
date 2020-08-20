@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 //For beeing able to dispatch more than one action from this function
 //we must use thunk
-export const setAlert = (msg, alertType) => (dispatch) => {
+export const setAlert = (msg, alertType, timeout = 3000) => (dispatch) => {
   const id = uuidv4();
   dispatch({
     type: SET_ALERT,
@@ -14,5 +14,5 @@ export const setAlert = (msg, alertType) => (dispatch) => {
     },
   });
 
-  setTimeout(() => dispatch({ type: REMOVE_ALERT, payload: id }), 3000);
+  setTimeout(() => dispatch({ type: REMOVE_ALERT, payload: id }), timeout);
 };
