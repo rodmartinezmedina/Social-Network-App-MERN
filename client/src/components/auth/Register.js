@@ -1,8 +1,12 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+//we bring an action from alert.js and then we are going to pass it with connect()
+import { setAlert } from "../../actions/alert";
+import PropTypes from "prop-types";
 import axios from "axios";
 
-const Register = () => {
+const Register = (props) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,6 +22,9 @@ const Register = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
+      //"Passwords do not match" gets passed as a msg to out setAlert action
+      //"danger" will be the alert type
+      props.setAlert("Passwords do not match", "danger");
       console.log("Passwords do not match");
     } else {
       console.log("Success");
@@ -85,10 +92,23 @@ const Register = () => {
   );
 };
 
-export default Register;
+Register.propTypes = {
+  setAlert: PropTypes.func.isRequired,
+};
 
+export default connect(null, { setAlert })(Register);
+//CONNECT() EXPLANATION AND BRINGING ACTIONS
+//with connect we pass the actions we bring
+//connect takes in 2 things.
+//1) Any state you want to map(if we want to get state from alert or profile, etc)
+//2) An object with any actions we want to use.
+// This lets us acces for example props.setAlert. We pass props in the initial parenthesis of the function
+//If we dont want to use props we just destructure and pass all the actions we linked and want to use inside of initial parenthesis
+//
+//
+//
+//REQUEST FOR CREATING USER WITHOUT USING REDUX
 //EXAMPLE HERE: DO NOT DELETE
-// //Request for creating user without redux
 //
 // const onSubmit = async (e) => {
 //   e.preventDefault();
