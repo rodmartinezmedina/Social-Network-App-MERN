@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 //we bring an action from alert.js and then we are going to pass it with connect()
 import { setAlert } from "../../actions/alert";
@@ -7,7 +7,7 @@ import { register } from "../../actions/auth";
 import PropTypes from "prop-types";
 import axios from "axios";
 
-const Register = ({ setAlert, register }) => {
+const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,7 +23,7 @@ const Register = ({ setAlert, register }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      //"Passwords do not match" gets passed as a msg to out setAlert action
+      //"Passwords do not match" gets passed as a msg to setAlert action
       //"danger" will be the alert type
       setAlert("Passwords do not match", "danger");
       console.log("Passwords do not match");
@@ -32,6 +32,11 @@ const Register = ({ setAlert, register }) => {
       console.log("Register was Successful");
     }
   };
+
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
+  }
+
   return (
     <Fragment>
       <h1 className="large text-primary">Sign Up</h1>
@@ -97,9 +102,15 @@ const Register = ({ setAlert, register }) => {
 Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
   register: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
 };
 
-export default connect(null, { setAlert, register })(Register);
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { setAlert, register })(Register);
+
 //CONNECT() EXPLANATION AND BRINGING ACTIONS
 //with connect we pass the actions we bring
 //connect takes in 2 things.
