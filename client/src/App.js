@@ -18,7 +18,7 @@ if (localStorage.token) {
 
 const App = () => {
   useEffect(() => {
-    store.dispatch(loadUser);
+    store.dispatch(loadUser());
   }, []);
   //Hooks official Docs
   // Remember the [] tells React the effect doesn't depend on any values from props or state.

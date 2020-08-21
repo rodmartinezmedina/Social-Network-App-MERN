@@ -27,7 +27,7 @@ export const loadUser = () => async (dispatch) => {
       type: AUTH_ERROR,
     });
   }
-  dispatch(loadUser());
+  // dispatch(loadUser());
 };
 
 //Register user action
