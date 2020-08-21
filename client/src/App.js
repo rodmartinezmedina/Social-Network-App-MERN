@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
@@ -8,10 +8,22 @@ import Alert from "./components/layout/Alert";
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
-
+import { loadUser } from "./actions/auth";
+import setAuthToken from "./utils/setAuthToken";
 import "./App.css";
 
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
+
 const App = () => {
+  useEffect(() => {
+    store.dispatch(loadUser);
+  }, []);
+  //Hooks official Docs
+  // Remember the [] tells React the effect doesn't depend on any values from props or state.
+  // so it never needs to re run.
+
   return (
     <Provider store={store}>
       <Router>
