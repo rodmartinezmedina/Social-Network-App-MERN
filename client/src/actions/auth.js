@@ -7,6 +7,7 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
+  LOGOUT,
 } from "./types";
 
 import setAuthToken from "../utils/setAuthToken";
@@ -87,6 +88,9 @@ export const login = (email, password) => async (dispatch) => {
     });
   }
 };
+
+//Logout / Clear Profile (future)
+export const logout = () => ({ type: LOGOUT });
 
 //Every time the main App component is loaded we should:
 // take the token we have stored

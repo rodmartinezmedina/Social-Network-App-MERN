@@ -5,6 +5,7 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
+  LOGOUT,
 } from "../actions/types";
 
 //initialState is created so we dont have to pass each parameter
@@ -41,6 +42,7 @@ export default function (state = initialState, action) {
     case REGISTER_FAIL:
     case AUTH_ERROR:
     case LOGIN_FAIL:
+    case LOGOUT:
       //clears the auth state and clears the token from localStorage
       localStorage.removeItem("token");
       return {
