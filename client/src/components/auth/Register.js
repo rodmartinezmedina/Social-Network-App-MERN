@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 //we bring an action from alert.js and then we are going to pass it with connect()
 import { setAlert } from "../../actions/alert";
+import { register } from "../../actions/auth";
 import PropTypes from "prop-types";
 import axios from "axios";
 
-const Register = (props) => {
+const Register = ({ setAlert, register }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,10 +25,11 @@ const Register = (props) => {
     if (password !== password2) {
       //"Passwords do not match" gets passed as a msg to out setAlert action
       //"danger" will be the alert type
-      props.setAlert("Passwords do not match", "danger");
+      setAlert("Passwords do not match", "danger");
       console.log("Passwords do not match");
     } else {
-      console.log("Success");
+      register({ name, email, password });
+      console.log("Register was Successful");
     }
   };
   return (
@@ -44,7 +46,7 @@ const Register = (props) => {
             name="name"
             value={name}
             onChange={(e) => onChange(e)}
-            required
+            // required
           />
         </div>
         <div className="form-group">
@@ -54,7 +56,7 @@ const Register = (props) => {
             name="email"
             value={email}
             onChange={(e) => onChange(e)}
-            required
+            // required
           />
           <small className="form-text">
             This site uses Gravatar so if you want a profile image, use a
@@ -68,8 +70,8 @@ const Register = (props) => {
             name="password"
             value={password}
             onChange={(e) => onChange(e)}
-            minLength="6"
-            required
+            // minLength="6"
+            // required
           />
         </div>
         <div className="form-group">
@@ -79,8 +81,8 @@ const Register = (props) => {
             name="password2"
             value={password2}
             onChange={(e) => onChange(e)}
-            minLength="6"
-            required
+            // minLength="6"
+            // required
           />
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
@@ -94,9 +96,10 @@ const Register = (props) => {
 
 Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired,
 };
 
-export default connect(null, { setAlert })(Register);
+export default connect(null, { setAlert, register })(Register);
 //CONNECT() EXPLANATION AND BRINGING ACTIONS
 //with connect we pass the actions we bring
 //connect takes in 2 things.
