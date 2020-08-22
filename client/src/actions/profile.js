@@ -24,3 +24,47 @@ export const getCurrentProfile = () => async (dispatch) => {
     });
   }
 };
+
+//Create or update a profile
+//history object has method push that redirects us to a client side route
+//to know if we are creating or updating we set a parameter edit(false by default)
+//we could also create 2 different funcs to create and update
+export const createProfile = (formData, history, edit = false) => async (
+  dispatch
+) => {
+  try {
+    //config always because we are sending data
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    //post request to /api/profile
+    const res = await axios.post("/api/profile", formData, config);
+
+    //payload will be the res.data that will actually be the profile
+    dispatch({
+      type: GET_PROFILE,
+      payload: res.data,
+    });
+
+    dispatch(setAlert(edit ? "Profile Updated" : "Profile Created", "success"));
+
+    //For redirecting in an action we cant do it with the Redirect component
+    // So we have to pass it the history object that has the push method on it
+    if (!edit) {
+      history.push("/dashboard");
+    }
+  } catch (err) {
+    const errors = err.response.data.errors;
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+    }
+
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
