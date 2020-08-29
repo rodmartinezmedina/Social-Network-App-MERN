@@ -187,6 +187,10 @@ const EditProfile = ({
 
         {displaySocialInputs && (
           <Fragment>
+            <h3>
+              Please insert the URL in the correct format. E.g:
+              "https://www.facebook.com/"{" "}
+            </h3>
             <div className="form-group social-input">
               <i className="fab fa-twitter fa-2x"></i>
               <input
