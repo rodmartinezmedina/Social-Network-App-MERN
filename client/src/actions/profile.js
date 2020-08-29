@@ -9,6 +9,7 @@ import {
   UPDATE_PROFILE,
   ACCOUNT_DELETED,
   GET_REPOS,
+  NO_REPOS,
 } from "./types";
 
 //Get current users profile
@@ -22,13 +23,16 @@ export const getCurrentProfile = () => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
+    // dispatch({ type: CLEAR_PROFILE });
+
     dispatch({
-      type: PROFILE_ERROR,
-      // we have error in the state. we get the error message text
-      payload: {
-        msg: err.response.statusText,
-        status: err.response.status,
-      },
+      type: NO_REPOS,
+      // type: PROFILE_ERROR,
+      // // we have error in the state. we get the error message text
+      // payload: {
+      //   msg: err.response.statusText,
+      //   status: err.response.status,
+      // },
     });
   }
 };
