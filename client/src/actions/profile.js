@@ -26,13 +26,13 @@ export const getCurrentProfile = () => async (dispatch) => {
     // dispatch({ type: CLEAR_PROFILE });
 
     dispatch({
-      type: NO_REPOS,
-      // type: PROFILE_ERROR,
-      // // we have error in the state. we get the error message text
-      // payload: {
-      //   msg: err.response.statusText,
-      //   status: err.response.status,
-      // },
+      // type: NO_REPOS,
+      type: PROFILE_ERROR,
+      // we have error in the state. we get the error message text
+      payload: {
+        msg: err.response.statusText,
+        status: err.response.status,
+      },
     });
   }
 };
@@ -92,12 +92,13 @@ export const getGithubRepos = (username) => async (dispatch) => {
     });
   } catch (err) {
     dispatch({
-      type: PROFILE_ERROR,
-      // we have error in the state. we get the error message text
-      payload: {
-        msg: err.response.statusText,
-        status: err.response.status,
-      },
+      type: NO_REPOS,
+      // type: PROFILE_ERROR,
+      // // we have error in the state. we get the error message text
+      // payload: {
+      //   msg: err.response.statusText,
+      //   status: err.response.status,
+      // },
     });
   }
 };
