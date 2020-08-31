@@ -7,8 +7,6 @@ import {
   DELETE_POST,
   ADD_POST,
 } from "./types";
-import { reset } from "nodemon";
-import config from "config";
 
 // Get posts
 export const getPosts = () => async (dispatch) => {
