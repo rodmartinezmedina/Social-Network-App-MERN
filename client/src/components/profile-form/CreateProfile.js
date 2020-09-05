@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from "react";
-//with router lets you re route from the action
+//withRouter lets you re route from the action
 import { Link, withRouter } from "react-router-dom";
+//cloudinary helper
+import cloudinaryService from "../../utils/cloudinary-service";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile } from "../../actions/profile";
@@ -48,6 +50,19 @@ const CreateProfile = ({ createProfile, history }) => {
     createProfile(formData, history);
   };
 
+  const handleImageChange = (event) => {
+    this.setState({ imageReady: false });
+
+    const file = event.target.files[0];
+    const imageFile = new FormData();
+
+    imageFile.append("image", file);
+
+    cloudinaryService.imageUpload(imageFile).then((imageUrl) => {
+      this.setState({ image: imageUrl, imageReady: true });
+    });
+  };
+
   return (
     <Fragment>
       <h1 className="large text-primary">Create Your Profile</h1>
@@ -78,6 +93,17 @@ const CreateProfile = ({ createProfile, history }) => {
           </select>
           <small className="form-text">Where are at in your career ?</small>
         </div>
+
+        <div className="form-group">
+          <label className="label">Profile picture</label>
+          <input
+            type="file"
+            placeholder="Upload your Profile Picture"
+            name="userImg"
+            onChange={(e) => handleImageChange(e)}
+          />
+        </div>
+
         <div className="form-group">
           <input
             type="text"

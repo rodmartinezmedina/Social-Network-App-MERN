@@ -1,6 +1,5 @@
 const cloudinary = require("cloudinary");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
-const cloudinaryStorage = require("multer-storage-cloudinary");
 const multer = require("multer");
 const bodyParser = require("body-parser");
 
