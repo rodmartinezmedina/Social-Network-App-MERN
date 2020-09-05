@@ -5,6 +5,8 @@ const auth = require("../../middleware/authMiddleware");
 
 const Post = require("../../models/PostModel");
 const User = require("../../models/UserModel");
+const Profile = require("../../models/ProfileModel");
+const { profile_url } = require("gravatar");
 // const checkObjectId = require('../../middleware/checkObjectId');
 
 // @route    POST api/posts
@@ -26,6 +28,7 @@ router.post(
         text: req.body.text,
         name: user.name,
         avatar: user.avatar,
+        userImg: profile.userImg,
         user: req.user.id,
       });
 
@@ -185,6 +188,7 @@ router.post(
         text: req.body.text,
         name: user.name,
         avatar: user.avatar,
+        userImg: profile.userImg,
         user: req.user.id,
       };
 

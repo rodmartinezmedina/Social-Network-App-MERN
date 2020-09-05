@@ -4,6 +4,7 @@ const router = express.Router();
 const config = require("config");
 const auth = require("../../middleware/authMiddleware");
 const { check, validationResult } = require("express-validator");
+const uploader = require("../../config/cloudinary");
 
 const Post = require("../../models/PostModel");
 const Profile = require("../../models/ProfileModel");
@@ -19,7 +20,7 @@ const { request } = require("express");
 // @desc  Get current user's profile
 router.get("/me", auth, async (req, res) => {
   try {
-    //user ir comes from the token. I asked for it on profile model => user
+    //user id comes from the token. I asked for it on profile model => user
     const profile = await Profile.findOne({
       user: req.user.id,
     }).populate("user", ["name", "avatar"]);
@@ -35,10 +36,14 @@ router.get("/me", auth, async (req, res) => {
 });
 
 //
-// @route GET api/profile
+//
+//
+//
+// @route POST api/profile
 // @desc  Create or update user profile
-
+//
 //1- Use auth middleware to see if logged in etc. Basic Checks
+//
 router.post(
   "/",
   [
@@ -47,6 +52,7 @@ router.post(
       check("status", "Status is required").not().isEmpty(),
       check("skills", "Skills is required").not().isEmpty(),
     ],
+    uploader.single("userImg"),
   ],
   // 2-Check for errors
   async (req, res) => {
@@ -56,6 +62,7 @@ router.post(
     }
 
     const {
+      userImg,
       company,
       website,
       location,
@@ -75,6 +82,7 @@ router.post(
     //Check if fields exist
     const profileFields = {};
     profileFields.user = req.user.id;
+    if (userImg) profileFields.userImg = userImg;
     if (company) profileFields.company = company;
     if (website) profileFields.website = website;
     if (location) profileFields.location = location;
@@ -108,6 +116,7 @@ router.post(
           { new: true }
         );
         return res.json(profile);
+        console.log("user profile updated");
       }
 
       //Create profile if not profile found
@@ -125,6 +134,8 @@ router.post(
   }
 );
 
+//
+//
 //
 // @route GET api/profile
 // @desc  Get all profiles
