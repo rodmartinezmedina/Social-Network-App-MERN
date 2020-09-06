@@ -1,7 +1,7 @@
 const cloudinary = require("cloudinary");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
+// const cloudinaryStorage = require("multer-storage-cloudinary");
 const multer = require("multer");
-const bodyParser = require("body-parser");
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -15,5 +15,6 @@ const storage = new CloudinaryStorage({
   allowedFormats: ["jpg", "png"],
   // params: { resource_type: 'raw' }, => this is in case you want to upload other type of files, not just images
 });
-const uploader = multer({ storage });
-module.exports = uploader;
+
+const parser = multer({ storage });
+module.exports = parser;

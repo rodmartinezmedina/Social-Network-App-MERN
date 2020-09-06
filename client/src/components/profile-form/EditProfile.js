@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 //with router lets you re route from the action
 import { Link, withRouter } from "react-router-dom";
+import cloudinaryService from "../../utils/cloudinary-service";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
@@ -12,6 +13,7 @@ const EditProfile = ({
   history,
 }) => {
   const [formData, setFormData] = useState({
+    userImg: "",
     company: "",
     website: "",
     location: "",
@@ -24,6 +26,7 @@ const EditProfile = ({
     linkedin: "",
     youtube: "",
     instagram: "",
+    imageReady: false,
   });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
@@ -32,6 +35,7 @@ const EditProfile = ({
     getCurrentProfile();
 
     setFormData({
+      userImg: loading || !profile.userImg ? "" : profile.userImg,
       company: loading || !profile.company ? "" : profile.company,
       website: loading || !profile.website ? "" : profile.website,
       location: loading || !profile.location ? "" : profile.location,
@@ -49,6 +53,8 @@ const EditProfile = ({
   }, [loading, getCurrentProfile]);
 
   const {
+    imageReady,
+    userImg,
     company,
     website,
     location,
@@ -71,6 +77,19 @@ const EditProfile = ({
     createProfile(formData, history, true);
   };
 
+  const handleImageChange = (event) => {
+    setFormData({ ...formData, imageReady: false });
+
+    const file = event.target.files[0];
+    const imageFile = new FormData();
+
+    imageFile.append("image", file);
+
+    cloudinaryService.imageUpload(imageFile).then((imageUrl) => {
+      setFormData({ userImg: imageUrl, imageReady: true });
+    });
+  };
+
   return (
     <Fragment>
       <h1 className="large text-primary">Create Your Profile</h1>
@@ -79,7 +98,11 @@ const EditProfile = ({
         profile stand out
       </p>
       <small>* = required field</small>
-      <form className="form" onSubmit={(e) => onSubmit(e)}>
+      <form
+        className="form"
+        onSubmit={(e) => onSubmit(e)}
+        encType="multipart/form-data"
+      >
         <div className="form-group">
           <select name="status" value={status} onChange={(e) => onChange(e)}>
             <option value="0">* Select Professional Status</option>
@@ -101,6 +124,17 @@ const EditProfile = ({
           </select>
           <small className="form-text">Where are at in your career ?</small>
         </div>
+
+        <div className="form-group">
+          <label className="label">Profile picture</label>
+          <input
+            type="file"
+            placeholder="Upload your Profile Picture"
+            name="userImg"
+            onChange={(e) => handleImageChange(e)}
+          />
+        </div>
+
         <div className="form-group">
           <input
             type="text"
@@ -110,7 +144,7 @@ const EditProfile = ({
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            Could be your own company or one you work for
+            Eg: Freelance, your own company, company or one you work for
           </small>
         </div>
         <div className="form-group">
@@ -121,9 +155,7 @@ const EditProfile = ({
             value={website}
             onChange={(e) => onChange(e)}
           />
-          <small className="form-text">
-            Could be your own or a company website
-          </small>
+          <small className="form-text">Your own or your company website</small>
         </div>
         <div className="form-group">
           <input
@@ -134,7 +166,7 @@ const EditProfile = ({
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            City & state suggested (eg. Boston, MA)
+            City & Country suggested (eg. Barcelona, Spain)
           </small>
         </div>
         <div className="form-group">
@@ -146,7 +178,7 @@ const EditProfile = ({
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+            Please use comma separated values (eg. HTML,CSS,JavaScript,React)
           </small>
         </div>
         <div className="form-group">

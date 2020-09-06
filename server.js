@@ -1,5 +1,8 @@
-// const multer = require("multer");
-// const cloudinary = require("cloudinary");
+const multer = require("multer");
+const cloudinary = require("cloudinary");
+const cloudinaryStorage = require("multer-storage-cloudinary");
+const bodyParser = require("body-parser");
+
 const express = require("express");
 const connectDB = require("./config/db");
 const app = express();
@@ -18,7 +21,7 @@ app.use("/api/users", require("./routes/api/usersRoute"));
 app.use("/api/profile", require("./routes/api/profileRoute"));
 app.use("/api/posts", require("./routes/api/postsRoute"));
 app.use("/api/auth", require("./routes/api/authRoute"));
-// app.use("/api/cloudinary", require("./routes/api/cloudinaryRoute"));
+app.use("/api/cloudinary", require("./routes/api/cloudinaryRoute"));
 
 const PORT = process.env.PORT || 5000;
 

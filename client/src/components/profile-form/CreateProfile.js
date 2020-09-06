@@ -22,11 +22,13 @@ const CreateProfile = ({ createProfile, history }) => {
     linkedin: "",
     youtube: "",
     instagram: "",
+    imageReady: false,
   });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
   const {
+    imageReady,
     userImg,
     company,
     website,
@@ -51,7 +53,7 @@ const CreateProfile = ({ createProfile, history }) => {
   };
 
   const handleImageChange = (event) => {
-    this.setState({ imageReady: false });
+    setFormData({ ...formData, imageReady: false });
 
     const file = event.target.files[0];
     const imageFile = new FormData();
@@ -59,7 +61,7 @@ const CreateProfile = ({ createProfile, history }) => {
     imageFile.append("image", file);
 
     cloudinaryService.imageUpload(imageFile).then((imageUrl) => {
-      this.setState({ image: imageUrl, imageReady: true });
+      setFormData({ userImg: imageUrl, imageReady: true });
     });
   };
 
@@ -71,7 +73,11 @@ const CreateProfile = ({ createProfile, history }) => {
         profile stand out
       </p>
       <small>* = required field</small>
-      <form className="form" onSubmit={(e) => onSubmit(e)}>
+      <form
+        className="form"
+        onSubmit={(e) => onSubmit(e)}
+        encType="multipart/form-data"
+      >
         <div className="form-group">
           <select name="status" value={status} onChange={(e) => onChange(e)}>
             <option value="0">* Select Professional Status</option>
@@ -113,7 +119,7 @@ const CreateProfile = ({ createProfile, history }) => {
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            Could be your own company or one you work for
+            Eg: Freelance, your own company, company you work for
           </small>
         </div>
         <div className="form-group">
@@ -124,9 +130,7 @@ const CreateProfile = ({ createProfile, history }) => {
             value={website}
             onChange={(e) => onChange(e)}
           />
-          <small className="form-text">
-            Could be your own or a company website
-          </small>
+          <small className="form-text">Your own or your company website</small>
         </div>
         <div className="form-group">
           <input
@@ -137,7 +141,7 @@ const CreateProfile = ({ createProfile, history }) => {
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            City & state suggested (eg. Boston, MA)
+            City & Country suggested (eg. Barcelona, Spain)
           </small>
         </div>
         <div className="form-group">
@@ -149,7 +153,7 @@ const CreateProfile = ({ createProfile, history }) => {
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+            Please use comma separated values (eg. HTML,CSS,JavaScript,React)
           </small>
         </div>
         <div className="form-group">

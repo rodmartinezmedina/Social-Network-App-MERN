@@ -15,6 +15,7 @@ const initialState = {
   repos: [],
   loading: true,
   errors: [],
+  imageReady: false,
 };
 
 export default function (state = initialState, action) {

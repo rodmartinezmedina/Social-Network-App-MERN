@@ -9,9 +9,15 @@ class Cloudinary {
   }
 
   imageUpload(imageFile) {
-    return this.auth
-      .post("/cloudinary", imageFile)
-      .then((imageUrl) => imageUrl.data);
+    return (
+      this.auth
+        .post(
+          "https://api.Cloudinary.com/v1_1/:dvioc75zu/image/upload",
+          imageFile
+        )
+        // .post("/api/cloudinary", imageFile)
+        .then((imageUrl) => imageUrl.data)
+    );
   }
 }
 

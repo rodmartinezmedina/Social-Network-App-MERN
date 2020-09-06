@@ -125,12 +125,13 @@ router.post(
       profile = new Profile(profileFields);
 
       await profile.save();
+      // res.json({ secure_url: req.file.secure_url }, profile);
       res.json(profile);
-      //cloudinary upload file
-      // get secure_url from the file object and save it in the
-      // variable 'secure_url', but this can be any name, just make sure you remember to use the same in frontend
-      res.json({ secure_url: req.file.secure_url });
-
+      // //
+      // //cloudinary upload file
+      // // get secure_url from the file object and save it in the
+      // // variable 'secure_url', but this can be any name, just make sure you remember to use the same in frontend
+      // res.json({ secure_url: req.file.secure_url });
       //Check if image was added
       if (!req.file) {
         next(new Error("No image uploaded!"));
