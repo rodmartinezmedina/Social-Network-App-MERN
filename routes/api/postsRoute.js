@@ -23,6 +23,10 @@ router.post(
 
     try {
       const user = await User.findById(req.user.id).select("-password");
+      const profile = await Profile.findOne({ user: req.user.id });
+      // console.log("profile", profile);
+      //   profile.user === req.user.id
+      // ).populate("userImg");
 
       const newPost = new Post({
         text: req.body.text,
@@ -33,7 +37,7 @@ router.post(
       });
 
       const post = await newPost.save();
-
+      console.log("profile", profile);
       res.json(post);
     } catch (err) {
       console.error(err.message);
@@ -188,7 +192,7 @@ router.post(
         text: req.body.text,
         name: user.name,
         avatar: user.avatar,
-        userImg: profile.userImg,
+        // userImg: profile.userImg,
         user: req.user.id,
       };
 
