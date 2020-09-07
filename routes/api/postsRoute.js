@@ -187,18 +187,21 @@ router.post(
     try {
       const user = await User.findById(req.user.id).select("-password");
       const post = await Post.findById(req.params.id);
+      const profile = await Profile.findOne({ user: req.user.id });
 
       const newComment = {
         text: req.body.text,
         name: user.name,
         avatar: user.avatar,
-        // userImg: profile.userImg,
+        userImg: profile.userImg,
         user: req.user.id,
       };
 
       post.comments.unshift(newComment);
 
       await post.save();
+      console.log("profile", profile);
+      console.log("post.comments es esto de aca: ", post.comments);
 
       res.json(post.comments);
     } catch (err) {

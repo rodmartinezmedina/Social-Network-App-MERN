@@ -7,10 +7,10 @@ import { deleteComment } from "../../actions/post";
 
 const CommentItem = ({
   postId,
-  comment: { _id, text, name, avatar, user, date },
+  comment: { _id, text, name, avatar, user, date, userImg },
   auth,
   deleteComment,
-  userImg,
+  // userImg,
 }) => {
   return (
     <div className="post bg-white p-1 my-1">
