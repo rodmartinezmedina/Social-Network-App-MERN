@@ -1,10 +1,35 @@
 import React, { Fragment, useState, useEffect } from "react";
 //with router lets you re route from the action
 import { Link, withRouter } from "react-router-dom";
-import cloudinaryService from "../../utils/cloudinary-service";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
+// import { CLOUD_NAME } from "../../.env";
+
+const NAME_OF_UPLOAD_PRESET = "ml_default";
+const MY_CLOUD_NAME = "dvioc75zu";
+const API_KEY = process.env.CLOUDINARY_API_KEY;
+
+async function uploadImage(file) {
+  const data = new FormData();
+  data.append("file", file);
+  data.append("api_key", `${API_KEY}`);
+  // data.append("cloud_name", fileUrl);
+  data.append("upload_preset", NAME_OF_UPLOAD_PRESET);
+
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/dvioc75zu/image/upload`,
+    {
+      method: "POST",
+      body: data,
+      unsigned: true,
+      upload_preset: "NAME_OF_UPLOAD_PRESET",
+    }
+  );
+  const userImg = await res.json();
+  console.log(userImg);
+  return userImg.secure_url;
+}
 
 const EditProfile = ({
   profile: { profile, loading },
@@ -26,7 +51,7 @@ const EditProfile = ({
     linkedin: "",
     youtube: "",
     instagram: "",
-    imageReady: false,
+    // imageReady: false,
   });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
@@ -53,7 +78,7 @@ const EditProfile = ({
   }, [loading, getCurrentProfile]);
 
   const {
-    imageReady,
+    // imageReady,
     userImg,
     company,
     website,
@@ -69,6 +94,18 @@ const EditProfile = ({
     instagram,
   } = formData;
 
+  const [uploadingImg, setUploadingImg] = useState(false);
+
+  const handleFileChange = async (event) => {
+    const [file] = event.target.files;
+    if (!file) return;
+
+    setUploadingImg(true);
+    const uploadedUrl = await uploadImage(file);
+    setFormData({ ...formData, userImg: uploadedUrl });
+    setUploadingImg(false);
+  };
+
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -77,18 +114,18 @@ const EditProfile = ({
     createProfile(formData, history, true);
   };
 
-  const handleImageChange = (event) => {
-    setFormData({ ...formData, imageReady: false });
+  // const handleImageChange = (event) => {
+  //   setFormData({ ...formData });
 
-    const file = event.target.files[0];
-    const imageFile = new FormData();
+  //   const file = event.target.files[0];
+  //   const imageFile = new FormData();
 
-    imageFile.append("image", file);
+  //   imageFile.append("image", file);
 
-    cloudinaryService.imageUpload(imageFile).then((imageUrl) => {
-      setFormData({ userImg: imageUrl, imageReady: true });
-    });
-  };
+  //   cloudinaryService.imageUpload(imageFile).then((imageUrl) => {
+  //     setFormData({ userImg: imageUrl, imageReady: true });
+  //   });
+  // };
 
   return (
     <Fragment>
@@ -101,7 +138,7 @@ const EditProfile = ({
       <form
         className="form"
         onSubmit={(e) => onSubmit(e)}
-        encType="multipart/form-data"
+        // encType="multipart/form-data"
       >
         <div className="form-group">
           <select name="status" value={status} onChange={(e) => onChange(e)}>
@@ -126,6 +163,15 @@ const EditProfile = ({
         </div>
 
         <div className="form-group">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
+            disabled={uploadingImg}
+          />
+        </div>
+
+        {/* <div className="form-group">
           <label className="label">Profile picture</label>
           <input
             type="file"
@@ -133,7 +179,7 @@ const EditProfile = ({
             name="userImg"
             onChange={(e) => handleImageChange(e)}
           />
-        </div>
+        </div> */}
 
         <div className="form-group">
           <input
