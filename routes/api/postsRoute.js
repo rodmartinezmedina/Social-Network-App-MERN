@@ -32,7 +32,7 @@ router.post(
         text: req.body.text,
         name: user.name,
         avatar: user.avatar,
-        // userImg: profile.userImg,
+        userImg: profile.userImg,
         user: req.user.id,
       });
 
