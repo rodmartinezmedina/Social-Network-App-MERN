@@ -4,16 +4,15 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
-// import { CLOUD_NAME } from "../../.env";
+import { CLOUD_NAME, CLOUDINARY_API_KEY } from "../../.env";
 
-const NAME_OF_UPLOAD_PRESET = "ml_default";
+const NAME_OF_UPLOAD_PRESET = "xdshqlct";
 const MY_CLOUD_NAME = "dvioc75zu";
-const API_KEY = process.env.CLOUDINARY_API_KEY;
 
 async function uploadImage(file) {
   const data = new FormData();
   data.append("file", file);
-  data.append("api_key", `${API_KEY}`);
+  // data.append("api_key", `${API_KEY}`);
   // data.append("cloud_name", fileUrl);
   data.append("upload_preset", NAME_OF_UPLOAD_PRESET);
 

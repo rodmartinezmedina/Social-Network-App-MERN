@@ -7,13 +7,12 @@ import { createProfile } from "../../actions/profile";
 import { CLOUD_NAME } from "../../.env";
 
 const NAME_OF_UPLOAD_PRESET = "xdshqlct";
-const MY_CLOUD_NAME = "dvioc75zu";
-const API_KEY = process.env.CLOUDINARY_API_KEY;
+const MY_CLOUD_NAME = process.env.CLOUD_NAME;
 
 async function uploadImage(file) {
   const data = new FormData();
   data.append("file", file);
-  data.append("api_key", `${API_KEY}`);
+  // data.append("api_key", `${API_KEY}`);
   // data.append("cloud_name", fileUrl);
   data.append("upload_preset", NAME_OF_UPLOAD_PRESET);
 
