@@ -26,7 +26,6 @@ const Profile = ({
         <Spinner />
       ) : (
         <Fragment>
-          Profile Component
           <Link to="/profiles" className="btn btn-light">
             Back to profiles
           </Link>
