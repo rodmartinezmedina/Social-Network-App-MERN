@@ -7,8 +7,7 @@
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
-    "sass": "npm compile:sass --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run sass \""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Rodrigo Martinez Medina",
   "license": "ISC",
