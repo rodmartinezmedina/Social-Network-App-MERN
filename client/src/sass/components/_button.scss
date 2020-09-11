@@ -45,3 +45,12 @@
 .btn:hover {
   opacity: 0.8;
 }
+
+/* Mobile Styles */
+@media (max-width: 700px) {
+  .dash-buttons a {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.2rem;
+  }
+}
