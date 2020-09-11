@@ -1,0 +1,43 @@
+.badge {
+  font-size: 0.8rem;
+  padding: 0.1rem;
+  text-align: center;
+  margin: 0.3rem;
+  background: $light-color;
+  color: $dark-grey-color;
+}
+
+.badge-primary {
+  background: $primary-color;
+  color: $white-color;
+}
+
+.badge-light {
+  background: $light-color;
+  color: $dark-grey-color;
+}
+
+.badge-dark {
+  background: $dark-color;
+  color: $white-color;
+}
+
+.badge-danger {
+  background: $danger-color;
+  color: $white-color;
+}
+
+.badge-success {
+  background: $success-color;
+  color: $white-color;
+}
+
+.badge-white {
+  background: $white-color;
+  color: $dark-grey-color;
+  border: $light-grey-color solid 1px;
+}
+
+.badge-light {
+  border: $light-grey-color solid 1px;
+}

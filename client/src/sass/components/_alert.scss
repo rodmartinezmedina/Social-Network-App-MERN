@@ -1,0 +1,42 @@
+.alert {
+  padding: 0.8rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  background: $light-color;
+  color: $dark-grey-color;
+}
+
+.alert-primary {
+  background: $primary-color;
+  color: $white-color;
+}
+
+.alert-light {
+  background: $light-color;
+  color: $dark-grey-color;
+}
+
+.alert-dark {
+  background: $dark-color;
+  color: $white-color;
+}
+
+.alert-danger {
+  background: $danger-color;
+  color: $white-color;
+}
+
+.alert-success {
+  background: $success-color;
+  color: $white-color;
+}
+
+.alert-white {
+  background: $white-color;
+  color: $dark-grey-color;
+  border: $light-grey-color solid 1px;
+}
+
+.alert-light {
+  border: $light-grey-color solid 1px;
+}
