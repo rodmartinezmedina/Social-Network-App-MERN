@@ -66,8 +66,8 @@
 }
 
 .bg-light {
-  background: $light-color;
-  color: $dark-grey-color;
+  background: $color-grey-light-1;
+  color: $color-grey-dark-1;
 }
 
 .bg-dark {
@@ -87,12 +87,12 @@
 
 .bg-white {
   background: $white-color;
-  color: $dark-grey-color;
-  border: $light-grey-color solid 1px;
+  color: $color-grey-dark-1;
+  border: $color-grey-light-4 solid 1px;
 }
 
 .bg-light {
-  border: $light-grey-color solid 1px;
+  border: $color-grey-light-4 solid 1px;
 }
 
 /* Global Styles */
@@ -102,7 +102,7 @@
 
 .line {
   height: 1px;
-  background: $light-grey-color;
+  background: $color-grey-light-4;
   margin: 1.5rem 0;
 }
 
@@ -123,7 +123,8 @@
 }
 
 .table th {
-  background: $light-color;
+  background: $color-grey-light-4;
+  border-radius: 15px;
 }
 
 /* Mobile Styles */

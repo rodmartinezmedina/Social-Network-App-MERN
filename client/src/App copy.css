@@ -2,7 +2,7 @@
 :root {
   --primary-color: #17a2b8;
   --dark-color: #343a40;
-  --light-color: #f4f4f4;
+  --secondary-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
 }
@@ -134,7 +134,7 @@ img {
 
 .btn {
   display: inline-block;
-  background: var(--light-color);
+  background: var(--secondary-color);
   color: #333;
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
@@ -150,7 +150,7 @@ img {
   padding: 0.1rem;
   text-align: center;
   margin: 0.3rem;
-  background: var(--light-color);
+  background: var(--secondary-color);
   color: #333;
 }
 
@@ -158,7 +158,7 @@ img {
   padding: 0.8rem;
   margin: 1rem 0;
   opacity: 0.9;
-  background: var(--light-color);
+  background: var(--secondary-color);
   color: #333;
 }
 
@@ -174,7 +174,7 @@ img {
 .bg-light,
 .badge-light,
 .alert-light {
-  background: var(--light-color);
+  background: var(--secondary-color);
   color: #333;
 }
 
@@ -301,7 +301,7 @@ button {
 }
 
 .table th {
-  background: var(--light-color);
+  background: var(--secondary-color);
 }
 
 /* Navbar */
@@ -481,7 +481,7 @@ button {
 }
 
 .post .comment-count {
-  background: var(--light-color);
+  background: var(--secondary-color);
   color: var(--primary-color);
   padding: 0.1rem 0.2rem;
   border-radius: 5px;
