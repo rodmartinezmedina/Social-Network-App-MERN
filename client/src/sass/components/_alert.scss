@@ -2,8 +2,8 @@
   padding: 0.8rem;
   margin: 1rem 0;
   opacity: 0.9;
-  background: $light-color;
-  color: $dark-grey-color;
+  background: $secondary-color;
+  color: $color-grey-dark-1;
 }
 
 .alert-primary {
@@ -12,8 +12,8 @@
 }
 
 .alert-light {
-  background: $light-color;
-  color: $dark-grey-color;
+  background: $secondary-color;
+  color: $color-grey-dark-1;
 }
 
 .alert-dark {
@@ -33,10 +33,10 @@
 
 .alert-white {
   background: $white-color;
-  color: $dark-grey-color;
-  border: $light-grey-color solid 1px;
+  color: $color-grey-dark-1;
+  border: $color-grey-light-4 solid 1px;
 }
 
 .alert-light {
-  border: $light-grey-color solid 1px;
+  border: $color-grey-light-4 solid 1px;
 }

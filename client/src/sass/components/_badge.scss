@@ -3,8 +3,8 @@
   padding: 0.1rem;
   text-align: center;
   margin: 0.3rem;
-  background: $light-color;
-  color: $dark-grey-color;
+  background: $color-grey-dark-1;
+  color: $white-color;
 }
 
 .badge-primary {
@@ -13,8 +13,8 @@
 }
 
 .badge-light {
-  background: $light-color;
-  color: $dark-grey-color;
+  background-color: $primary-color-light;
+  color: $color-grey-dark-1;
 }
 
 .badge-dark {
@@ -34,10 +34,10 @@
 
 .badge-white {
   background: $white-color;
-  color: $dark-grey-color;
-  border: $light-grey-color solid 1px;
+  color: $color-grey-dark-1;
+  border: $color-grey-light-4 solid 1px;
 }
 
 .badge-light {
-  border: $light-grey-color solid 1px;
+  border: $color-grey-light-4 solid 1px;
 }

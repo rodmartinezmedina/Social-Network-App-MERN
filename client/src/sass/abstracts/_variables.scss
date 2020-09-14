@@ -1,12 +1,36 @@
-$primary-color: blue;
-$dark-color: #343a40;
-$light-color: #f4f4f4;
-$danger-color: #dc3545;
-$success-color: #28a745;
+// Main Palette
+$primary-color-dark: #0f2557;
+$primary-color: #28559a;
+$primary-color-light: #538de5;
+$primary-color-lighter: #63bce5;
+$primary-color-lightest: #a8dcf5;
+
+$secondary-color: #e39d52;
+$secondary-color-light: #deb992;
+$third-color: #5e4f3e;
+
+$dark-color: #150734;
+
+// Black and whites
 $white-color: #fff;
 $black-color: black;
-$dark-grey-color: #333;
-$light-grey-color: #ccc;
+
+$color-grey-light-1: #faf9f9;
+$color-grey-light-2: #f4f2f2;
+$color-grey-light-3: #f0eeee;
+$color-grey-light-4: #ccc;
+
+$color-grey-dark-1: #333;
+$color-grey-dark-2: #777;
+$color-grey-dark-3: #999;
+
+// Danger & Success
+$danger-color-dark: #851621;
+$danger-color: #aa2b38;
+$danger-color-light: #f56c7a;
+$success-color: #239c40;
+
+// Social Media
 $twitter-blue-color: #38a1f3;
 $facebook-blue-color: #3b5998;
 $instagram-blue-color: #3f729b;
