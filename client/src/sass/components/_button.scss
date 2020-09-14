@@ -30,12 +30,22 @@
   }
 
   &-light {
-    background-color: $primary-color-light;
+    // background-color: $primary-color-light;
+    background-image: linear-gradient(
+      to right,
+      $primary-color-light,
+      $primary-color-lighter
+    );
     color: $color-grey-light-1;
   }
 
   &-dark {
-    background: $dark-color;
+    // background: $dark-color;
+    background-image: linear-gradient(
+      to right bottom,
+      $color-grey-dark-1,
+      $color-grey-dark-2
+    );
     color: $white-color;
   }
 

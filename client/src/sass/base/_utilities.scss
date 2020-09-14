@@ -61,7 +61,12 @@
 }
 
 .bg-primary {
-  background: $primary-color;
+  // background: $primary-color;
+  background-image: linear-gradient(
+    to right,
+    $primary-color-dark,
+    $primary-color
+  );
   color: $white-color;
 }
 
