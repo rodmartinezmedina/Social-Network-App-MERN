@@ -65,7 +65,8 @@
   background-image: linear-gradient(
     to right,
     $primary-color-dark,
-    $primary-color
+    $primary-color,
+    $primary-color-dark
   );
   color: $white-color;
 }

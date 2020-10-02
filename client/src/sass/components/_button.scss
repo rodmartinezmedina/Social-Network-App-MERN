@@ -20,6 +20,11 @@
     );
   }
 
+  &:active {
+    transform: translateY(-3px);
+    box-shadow: 0rem 0.3rem 0.9rem rgba($color-grey-dark-1, 0.8);
+  }
+
   &-primary {
     background-image: linear-gradient(
       to right,

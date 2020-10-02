@@ -128,10 +128,10 @@ const EditProfile = ({
 
   return (
     <Fragment>
-      <h1 className="large text-primary">Create Your Profile</h1>
+      <h1 className="large text-primary">Edit Your Profile</h1>
       <p className="lead">
-        <i className="fas fa-user"></i> Let's get some information to make your
-        profile stand out
+        <i className="fas fa-user"></i> Let your peers know you better. Add or
+        edit any information you deem relevant
       </p>
       <small>* = required field</small>
       <form
@@ -323,7 +323,11 @@ const EditProfile = ({
           </Fragment>
         )}
 
-        <input type="submit" className="btn btn-primary my-1" />
+        <input
+          type="submit"
+          className="btn btn-primary my-1"
+          value="Submit Changes"
+        />
         <Link className="btn btn-light my-1" to="/dashboard">
           Go Back
         </Link>

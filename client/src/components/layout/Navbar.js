@@ -47,7 +47,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <h1>
         <Link to="/">
           {/* <i className="fas fa-terminal"></i> */}
-          <i className="fas fa-code-branch"></i> CodingNetwork
+          <i className="fas fa-code-branch"></i> TechNetwork
         </Link>
       </h1>
 
