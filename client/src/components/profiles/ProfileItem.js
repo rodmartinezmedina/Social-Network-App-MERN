@@ -34,20 +34,20 @@ const ProfileItem = ({
         <p>{company && <span> {company} </span>}</p>
         <ul className="skills-list">
           {skills.slice(0.4).map((skill, index) => (
-            <li key={index} className="text-primary skill">
+            <li key={index} className="text-primary skill btn btn-white">
               {skill}
             </li>
           ))}
         </ul>
-        <p>{shortenBio}... </p>
-
-        <Link
-          to={`/profile/${_id}`}
-          className="btn btn-primary profile-card__btn "
-        >
-          View Profile
-        </Link>
+        <p className="profile-card__bio">{shortenBio}... </p>
       </div>
+      {/* 3 */}
+      <Link
+        to={`/profile/${_id}`}
+        className="btn btn-primary profile-card__btn "
+      >
+        View Profile
+      </Link>
     </div>
   );
 };

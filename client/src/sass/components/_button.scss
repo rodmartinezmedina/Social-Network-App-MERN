@@ -89,15 +89,22 @@
   &-white {
     background: $white-color;
     color: $color-grey-dark-1;
-    border: $color-grey-light-4 solid 1px;
+    border: rgba($color-grey-light-4, 0.9) solid 1px;
   }
-}
 
-/* Mobile Styles */
-@media (max-width: 700px) {
-  .dash-buttons a {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.2rem;
+  &-skill {
+    &-primary {
+      background-color: white;
+      color: $color-grey-dark-1;
+    }
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 700px) {
+    .dash-buttons a {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.2rem;
+    }
   }
 }

@@ -21,6 +21,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
             <i className="fab fa-connectdevelop"></i>
             Browse and connect with other users
           </p>
+
           <div className="profiles">
             {profiles.length > 0 ? (
               profiles.map((profile) => (
