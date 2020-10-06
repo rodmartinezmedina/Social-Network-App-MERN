@@ -14,7 +14,7 @@ const ProfileItem = ({
     userImg,
   },
 }) => {
-  const shortenBio = bio ? bio.substring(0, 50) : "";
+  const shortenBio = bio ? bio.substring(0, 60) : "";
 
   return (
     <div className="profile-card bg-light">
@@ -30,24 +30,28 @@ const ProfileItem = ({
 
       {/* 2 */}
       <div className="profile-card__info-container">
-        <p>{status}</p>
-        <p>{company && <span> {company} </span>}</p>
+        <p className="profile-card__status">{status}</p>
+        <p className="profile-card__company">
+          {company && (
+            <span>
+              <i class="far fa-building"></i> {company}{" "}
+            </span>
+          )}
+        </p>
         <ul className="skills-list">
-          {skills.slice(0.4).map((skill, index) => (
-            <li key={index} className="text-primary skill btn btn-white">
+          {skills.slice(0, 3).map((skill, index) => (
+            <li key={index} className="skill">
               {skill}
             </li>
           ))}
+          <li className="skill skill__count">+{skills.length}</li>
         </ul>
-        <p className="profile-card__bio">{shortenBio}... </p>
+        <p className="card-bio">{shortenBio}... </p>
       </div>
       {/* 3 */}
-      <Link
-        to={`/profile/${_id}`}
-        className="btn btn-primary profile-card__btn "
-      >
-        View Profile
-      </Link>
+      <div className="card-btn">
+        <Link to={`/profile/${_id}`}>View Profile</Link>
+      </div>
     </div>
   );
 };

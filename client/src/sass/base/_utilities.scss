@@ -1,12 +1,12 @@
 /* Utilities */
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: auto;
-
   overflow: hidden;
   padding: 0 2rem;
   margin-top: 6rem;
   margin-bottom: 3rem;
+  // background-color: $color-grey-light-1;
 }
 
 /* Padding */
@@ -110,7 +110,7 @@
 .line {
   height: 1px;
   background: $color-grey-light-4;
-  margin: 1.5rem 0;
+  margin: 0.5rem 0;
 }
 
 /* Overlay */
