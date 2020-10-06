@@ -8,12 +8,14 @@
     font-family: "Roboto";
     font-weight: 500;
     margin-bottom: 0;
+    text-align: center;
   }
 
   > p {
     font-family: "Roboto";
     font-weight: 400;
     color: $primary-color-light;
+    text-align: center;
   }
 }
 
@@ -158,5 +160,21 @@
     display: grid;
     grid-template-columns: 100%;
     text-align: center;
+  }
+}
+
+@media (max-width: 370px) {
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-card {
+    &__img {
+      object-fit: cover;
+      width: 10rem;
+      height: 10rem;
+      padding: 1rem;
+    }
   }
 }

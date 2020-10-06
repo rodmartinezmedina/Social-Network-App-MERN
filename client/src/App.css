@@ -386,7 +386,9 @@ button {
 
 /* Navbar */
 #nav-logo {
-  color: #63bce5; }
+  color: #63bce5;
+  font-weight: 400;
+  letter-spacing: 0.2rem; }
   #nav-logo:hover {
     color: #a8dcf5; }
 
@@ -401,7 +403,8 @@ button {
   top: 0;
   border-bottom: solid 1px #28559a;
   opacity: 0.9;
-  color: #538de5; }
+  color: #538de5;
+  font-family: "Roboto"; }
   .navbar ul {
     display: flex; }
   .navbar a {
@@ -579,11 +582,13 @@ button {
   .profiles-page-container > h1 {
     font-family: "Roboto";
     font-weight: 500;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    text-align: center; }
   .profiles-page-container > p {
     font-family: "Roboto";
     font-weight: 400;
-    color: #538de5; }
+    color: #538de5;
+    text-align: center; }
 
 .profiles {
   width: 100%;
@@ -685,6 +690,16 @@ button {
     display: grid;
     grid-template-columns: 100%;
     text-align: center; } }
+
+@media (max-width: 370px) {
+  .skills-list {
+    display: flex;
+    flex-direction: column; }
+  .profile-card__img {
+    object-fit: cover;
+    width: 10rem;
+    height: 10rem;
+    padding: 1rem; } }
 
 /* Mobile Styles */
 @media (max-width: 700px) {

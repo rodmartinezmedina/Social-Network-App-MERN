@@ -2,6 +2,8 @@
 
 #nav-logo {
   color: $primary-color-lighter;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
 
   &:hover {
     color: $primary-color-lightest;
@@ -19,6 +21,7 @@
   border-bottom: solid 1px $primary-color;
   opacity: 0.9;
   color: $primary-color-light;
+  font-family: "Roboto";
 
   ul {
     display: flex;
