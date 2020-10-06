@@ -15,8 +15,8 @@
   &-grid {
     display: grid;
     grid-template-areas:
-      "top top"
-      "about about"
+      "top about"
+      "top about"
       "exp edu"
       "github github";
     grid-gap: 1rem;
@@ -31,10 +31,38 @@
     text-align: center;
     border-radius: 0.5rem;
     box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.5);
+
+    &-name {
+      color: $color-grey-dark-1;
+    }
+
+    &__upper-container {
+    }
+
+    &__status {
+      color: $secondary-color;
+      // color: $primary-color;
+      min-height: 2rem;
+      font-weight: 500;
+      font-family: "Roboto";
+    }
+
+    &__lower-container {
+      width: 100%;
+    }
+
+    &__location {
+      margin-bottom: 0.5rem;
+    }
   }
 
   &-top img {
     width: 250px;
+  }
+
+  &-top .icons {
+    width: 100%;
+    padding: 0.5rem 2rem;
   }
 
   &-top .icons a {

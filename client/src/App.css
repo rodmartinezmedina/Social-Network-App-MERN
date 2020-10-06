@@ -496,7 +496,7 @@ button {
   box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.4); }
   .profile-grid {
     display: grid;
-    grid-template-areas: "top top" "about about" "exp edu" "github github";
+    grid-template-areas: "top about" "top about" "exp edu" "github github";
     grid-gap: 1rem; }
   .profile-top {
     grid-area: top;
@@ -507,8 +507,22 @@ button {
     text-align: center;
     border-radius: 0.5rem;
     box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.5); }
+    .profile-top-name {
+      color: #333; }
+    .profile-top__status {
+      color: #e39d52;
+      min-height: 2rem;
+      font-weight: 500;
+      font-family: "Roboto"; }
+    .profile-top__lower-container {
+      width: 100%; }
+    .profile-top__location {
+      margin-bottom: 0.5rem; }
   .profile-top img {
     width: 250px; }
+  .profile-top .icons {
+    width: 100%;
+    padding: 0.5rem 2rem; }
   .profile-top .icons a {
     color: #fff;
     margin: 0 0.3rem; }
@@ -578,7 +592,9 @@ button {
 .profiles-page-container {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  justify-content: center;
+  text-align: center; }
   .profiles-page-container > h1 {
     font-family: "Roboto";
     font-weight: 500;
@@ -643,7 +659,7 @@ button {
 
 .card-btn {
   width: 100%;
-  padding: 0.4rem 1.3rem;
+  padding: 0.4rem 1.3rem 0.4rem;
   margin: 0;
   cursor: pointer;
   color: #fff;
@@ -685,13 +701,13 @@ button {
     grid-template-columns: repeat(2, minmax(2rem, 50%));
     text-align: center; } }
 
-@media (max-width: 750px) {
+@media (max-width: 850px) {
   .profiles {
     display: grid;
     grid-template-columns: 100%;
     text-align: center; } }
 
-@media (max-width: 370px) {
+@media (max-width: 473px) {
   .skills-list {
     display: flex;
     flex-direction: column; }
