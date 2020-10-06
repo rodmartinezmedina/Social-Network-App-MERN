@@ -5,19 +5,20 @@
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
-  border-radius: 70px;
+  border-radius: 20px;
   cursor: pointer;
   margin-right: 0.5rem;
-  transition: opacity 0.2s ease-in;
+  transition: 0.2s ease-in;
   outline: none;
 
   &:hover {
     // opacity: 0.6;
-    background-image: linear-gradient(
-      to right,
-      $primary-color,
-      $primary-color-light
-    );
+    // background-image: linear-gradient(
+    //   to right,
+    //   $primary-color,
+    //   $primary-color-light
+    // );
+    // transition: background-image 1s;
   }
 
   &:active {
@@ -32,10 +33,19 @@
       $primary-color-dark
     );
     color: $white-color;
+    transition: background-image 0.4s linear;
+
+    &:hover {
+      // opacity: 0.6;
+      background-image: linear-gradient(
+        to right,
+        $primary-color,
+        $primary-color-light
+      );
+    }
   }
 
   &-light {
-    // background-color: $primary-color-light;
     background-image: linear-gradient(
       to right,
       $primary-color-light,
@@ -45,7 +55,6 @@
   }
 
   &-dark {
-    // background: $dark-color;
     background-image: linear-gradient(
       to right bottom,
       $color-grey-dark-1,

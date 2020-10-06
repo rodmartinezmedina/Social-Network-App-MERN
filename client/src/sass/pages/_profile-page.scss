@@ -1,4 +1,5 @@
-/* Profiles Page */
+/* Profile Page */
+
 .profile {
   display: grid;
   grid-template-columns: 2fr 4fr 2fr;
@@ -7,6 +8,9 @@
   padding: 1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.4);
+  // border-color: $color-grey-light-3;
 
   &-grid {
     display: grid;
@@ -25,6 +29,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.5);
   }
 
   &-top img {
@@ -44,6 +50,8 @@
   &-about {
     grid-area: about;
     text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.2);
   }
 
   &-about .skills {
@@ -55,10 +63,14 @@
 
   &-exp {
     grid-area: exp;
+    border-radius: 0.5rem;
+    box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.2);
   }
 
   &-edu {
     grid-area: edu;
+    border-radius: 0.5rem;
+    box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.2);
   }
 
   &-exp h2,

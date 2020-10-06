@@ -1,4 +1,12 @@
 /* Navbar */
+
+#nav-logo {
+  color: $primary-color-lighter;
+
+  &:hover {
+    color: $primary-color-lightest;
+  }
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -10,6 +18,7 @@
   top: 0;
   border-bottom: solid 1px $primary-color;
   opacity: 0.9;
+  color: $primary-color-lighter;
 
   ul {
     display: flex;
@@ -21,7 +30,7 @@
     margin: 0 0.25rem;
 
     &:hover {
-      color: $primary-color-lighter;
+      color: $primary-color-lightest;
     }
 
     &:active {

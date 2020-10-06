@@ -164,7 +164,7 @@ img {
   color: #333; }
 
 .bg-dark {
-  background: #150734;
+  background: #242424;
   color: #fff; }
 
 .bg-danger {
@@ -208,7 +208,7 @@ img {
 
 .table th {
   background: #ccc;
-  border-radius: 15px; }
+  border-radius: 0.5rem; }
 
 /* Mobile Styles */
 @media (max-width: 700px) {
@@ -233,7 +233,7 @@ img {
   color: #333; }
 
 .alert-dark {
-  background: #150734;
+  background: #070c34;
   color: #fff; }
 
 .alert-danger {
@@ -269,7 +269,7 @@ img {
   color: #333; }
 
 .badge-dark {
-  background: #150734;
+  background: #070c34;
   color: #fff; }
 
 .badge-danger {
@@ -295,19 +295,20 @@ img {
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
-  border-radius: 70px;
+  border-radius: 20px;
   cursor: pointer;
   margin-right: 0.5rem;
-  transition: opacity 0.2s ease-in;
+  transition: 0.2s ease-in;
   outline: none; }
-  .btn:hover {
-    background-image: linear-gradient(to right, #28559a, #538de5); }
   .btn:active {
     transform: translateY(-3px);
     box-shadow: 0rem 0.3rem 0.9rem rgba(51, 51, 51, 0.8); }
   .btn-primary {
     background-image: linear-gradient(to right, #28559a, #142a5e);
-    color: #fff; }
+    color: #fff;
+    transition: background-image 0.4s linear; }
+    .btn-primary:hover {
+      background-image: linear-gradient(to right, #28559a, #538de5); }
   .btn-light {
     background-image: linear-gradient(to right, #538de5, #63bce5);
     color: #faf9f9; }
@@ -382,6 +383,11 @@ button {
   color: #0077b5; }
 
 /* Navbar */
+#nav-logo {
+  color: #63bce5; }
+  #nav-logo:hover {
+    color: #a8dcf5; }
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -392,7 +398,8 @@ button {
   width: 100%;
   top: 0;
   border-bottom: solid 1px #28559a;
-  opacity: 0.9; }
+  opacity: 0.9;
+  color: #63bce5; }
   .navbar ul {
     display: flex; }
   .navbar a {
@@ -400,7 +407,7 @@ button {
     padding: 0.45rem;
     margin: 0 0.25rem; }
     .navbar a:hover {
-      color: #63bce5; }
+      color: #a8dcf5; }
     .navbar a:active {
       color: #a8dcf5; }
 
@@ -455,7 +462,7 @@ button {
   background: #deb992;
   color: #28559a;
   padding: 0.1rem 0.2rem;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   font-size: 0.8rem; }
 
 .post .post-date {
@@ -471,7 +478,7 @@ button {
   .post button {
     padding: 0.3rem 0.4rem; } }
 
-/* Profiles Page */
+/* Profile Page */
 .profile {
   display: grid;
   grid-template-columns: 2fr 4fr 2fr;
@@ -479,7 +486,9 @@ button {
   grid-gap: 2rem;
   padding: 1rem;
   line-height: 1.8;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.4); }
   .profile-grid {
     display: grid;
     grid-template-areas: "top top" "about about" "exp edu" "github github";
@@ -490,7 +499,9 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center; }
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.5); }
   .profile-top img {
     width: 250px; }
   .profile-top .icons a {
@@ -500,16 +511,22 @@ button {
     color: #63bce5; }
   .profile-about {
     grid-area: about;
-    text-align: center; }
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.2); }
   .profile-about .skills {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center; }
   .profile-exp {
-    grid-area: exp; }
+    grid-area: exp;
+    border-radius: 0.5rem;
+    box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.2); }
   .profile-edu {
-    grid-area: edu; }
+    grid-area: edu;
+    border-radius: 0.5rem;
+    box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.2); }
   .profile-exp h2,
   .profile-edu h2 {
     margin-bottom: 1rem; }
@@ -552,6 +569,29 @@ button {
       grid-template-areas: "top" "about" "exp" "edu" "github"; }
     .profile-about .skills {
       flex-direction: column; } }
+
+.profiles {
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  align-items: center;
+  column-gap: 1rem;
+  row-gap: 1.5rem;
+  padding: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.4); }
+
+.profile-card {
+  display: grid;
+  grid-template-rows: auto;
+  justify-items: center; }
+  .profile-card__img {
+    width: 70%; }
+  .profile-card__info-container {
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center; }
 
 /* Mobile Styles */
 @media (max-width: 700px) {
