@@ -16,17 +16,18 @@ const ProfileTop = ({
   return (
     <div className="profile-top">
       {/* 1 */}
-      <div className="profile-top__upper-container">
+      <div className="profile-top-high-container">
         <img
           className="round-img my-1"
           src={userImg ? userImg : avatar}
           alt=""
         />
-        <h1 className="large">{name}</h1>
+        <h1 className="profile-top__name">{name}</h1>
       </div>
+
       {/* 2 */}
-      <div className="profile-top__lower-container">
-        <p className="lead profile-top__status profile-name">
+      <div className="profile-top-low-container">
+        <p className="profile-top__status">
           {status} {company && <span> at {company}</span>}
         </p>
         <p className="profile-top__location">

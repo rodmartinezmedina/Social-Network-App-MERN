@@ -34,7 +34,7 @@ const ProfileItem = ({
         <p className="profile-card__company">
           {company && (
             <span>
-              <i class="far fa-building"></i> {company}{" "}
+              <i className="far fa-building"></i> {company}{" "}
             </span>
           )}
         </p>

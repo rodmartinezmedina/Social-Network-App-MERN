@@ -486,7 +486,7 @@ button {
 /* Profile Page */
 .profile {
   display: grid;
-  grid-template-columns: 2fr 4fr 2fr;
+  grid-template-columns: minmax(2rem, 30%) minmax(2rem, 70%);
   align-items: center;
   grid-gap: 2rem;
   padding: 1rem;
@@ -506,9 +506,12 @@ button {
     align-items: center;
     text-align: center;
     border-radius: 0.5rem;
-    box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.5); }
-    .profile-top-name {
-      color: #333; }
+    box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.5);
+    background-color: #fff; }
+    .profile-top-high-container {
+      width: 100%; }
+    .profile-top-low-container {
+      width: 100%; }
     .profile-top__status {
       color: #e39d52;
       min-height: 2rem;
@@ -516,7 +519,13 @@ button {
       font-family: "Roboto"; }
     .profile-top__lower-container {
       width: 100%; }
+    .profile-top__name {
+      color: #333;
+      font-family: "Roboto";
+      font-weight: 500;
+      font-size: 2rem; }
     .profile-top__location {
+      color: #333;
       margin-bottom: 0.5rem; }
   .profile-top img {
     width: 250px; }
@@ -533,7 +542,7 @@ button {
     text-align: center;
     border-radius: 0.5rem;
     box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.2); }
-  .profile-about .skills {
+  .profile-about .skills-list-profile {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -561,7 +570,8 @@ button {
   .profile-edu p {
     margin: 0.5rem 0; }
   .profile-github {
-    grid-area: github; }
+    grid-area: github;
+    text-align: center; }
   .profile-github .repo {
     display: flex; }
   .profile-github .repo > div:first-child {
@@ -586,8 +596,25 @@ button {
       margin: auto; }
     .profile-grid {
       grid-template-areas: "top" "about" "exp" "edu" "github"; }
-    .profile-about .skills {
-      flex-direction: column; } }
+    .profile-about {
+      text-align: center; }
+    .profile-exp {
+      text-align: center; }
+    .profile-edu {
+      text-align: center; } }
+
+@media (max-width: 450px) {
+  .profile-top__name {
+    font-size: 1.5rem; }
+  .profile-top img {
+    width: 150px;
+    margin: auto; }
+  .profile-top .icons {
+    width: 100%;
+    padding: 0.7rem 1rem; }
+  .profile-top .icons a i {
+    margin: 0 0.2rem;
+    font-size: 1.6rem; } }
 
 .profiles-page-container {
   display: flex;
