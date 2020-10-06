@@ -39,12 +39,15 @@ const ProfileItem = ({
           )}
         </p>
         <ul className="skills-list">
-          {skills.slice(0, 3).map((skill, index) => (
+          {skills.slice(0, 2).map((skill, index) => (
             <li key={index} className="skill">
               {skill}
             </li>
           ))}
-          <li className="skill skill__count">+{skills.length}</li>
+          {/* <li className="skill skill__count">+{skills.length - 2}</li> */}
+          <li className="skill skill__count">
+            {skills.length <= 2 ? "+ 0" : <span>+ {skills.length - 2}</span>}
+          </li>
         </ul>
         <p className="card-bio">{shortenBio}... </p>
       </div>

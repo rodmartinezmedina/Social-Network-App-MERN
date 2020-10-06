@@ -401,7 +401,7 @@ button {
   top: 0;
   border-bottom: solid 1px #28559a;
   opacity: 0.9;
-  color: #63bce5; }
+  color: #538de5; }
   .navbar ul {
     display: flex; }
   .navbar a {
@@ -572,6 +572,19 @@ button {
     .profile-about .skills {
       flex-direction: column; } }
 
+.profiles-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .profiles-page-container > h1 {
+    font-family: "Roboto";
+    font-weight: 500;
+    margin-bottom: 0; }
+  .profiles-page-container > p {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: #538de5; }
+
 .profiles {
   width: 100%;
   display: grid;
@@ -613,6 +626,7 @@ button {
     align-items: center; }
   .profile-card__company {
     color: #e39d52;
+    min-height: 2rem;
     font-weight: 500;
     font-family: "Roboto"; }
 
@@ -655,9 +669,12 @@ button {
   margin-right: 0.1rem; }
   .skill__count {
     background-color: #538de5;
-    color: #fff; }
+    color: #fff;
+    max-height: 2rem;
+    align-self: center;
+    width: 4rem; }
 
-@media (max-width: 1000px) {
+@media (max-width: 1070px) {
   .profiles {
     display: grid;
     grid-template-columns: repeat(2, minmax(2rem, 50%));
