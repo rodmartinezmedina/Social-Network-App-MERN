@@ -19,28 +19,32 @@ const ProfileItem = ({
   return (
     <div className="profile-card bg-light">
       {/* 1 */}
-      <img
-        src={userImg ? userImg : avatar}
-        alt=""
-        className="profile-card__img round-img"
-      />
+      <div className="profile-card__header">
+        <img
+          src={userImg ? userImg : avatar}
+          alt=""
+          className="profile-card__img round-img"
+        />
+        <h2>{name}</h2>
+      </div>
+
       {/* 2 */}
       <div className="profile-card__info-container">
-        <h2>{name}</h2>
         <p>{status}</p>
         <p>{company && <span> {company} </span>}</p>
-        {/* <p>{bio && <span> {bio} </span>}</p> */}
-        <p>{shortenBio}... </p>
-
         <ul className="skills-list">
           {skills.slice(0.4).map((skill, index) => (
             <li key={index} className="text-primary skill">
-              <i className="fas fa-check"></i> {skill}
+              {skill}
             </li>
           ))}
         </ul>
+        <p>{shortenBio}... </p>
 
-        <Link to={`/profile/${_id}`} className="btn btn-primary">
+        <Link
+          to={`/profile/${_id}`}
+          className="btn btn-primary profile-card__btn "
+        >
           View Profile
         </Link>
       </div>
