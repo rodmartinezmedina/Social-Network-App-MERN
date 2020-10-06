@@ -594,8 +594,10 @@ button {
   box-shadow: -0.1rem 0.2rem 0.4rem rgba(204, 204, 204, 0.6);
   border-radius: 0.5rem; }
   .profile-card__img {
-    max-width: 80%;
-    margin-top: 0.5rem; }
+    object-fit: cover;
+    width: 15rem;
+    height: 15rem;
+    padding: 1rem; }
   .profile-card__header {
     max-width: 80%;
     display: flex;

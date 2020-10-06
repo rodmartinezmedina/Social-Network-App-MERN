@@ -24,9 +24,10 @@
   border-radius: 0.5rem;
 
   &__img {
-    max-width: 80%;
-    // max-height: 50%;
-    margin-top: 0.5rem;
+    object-fit: cover;
+    width: 15rem;
+    height: 15rem;
+    padding: 1rem;
   }
 
   &__header {
