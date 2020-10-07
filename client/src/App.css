@@ -338,6 +338,9 @@ img {
       margin-bottom: 0.2rem; } }
 
 /* Forms */
+.form textarea {
+  font-family: "Roboto"; }
+
 .form .form-group {
   margin: 1.2rem 0; }
 
@@ -447,6 +450,27 @@ button {
   text-align: center; }
 
 /* Posts Page */
+.posts-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .posts-page-container > h1 {
+    font-family: "Roboto";
+    font-weight: 500;
+    margin-bottom: 0;
+    text-align: center; }
+  .posts-page-container > p {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: #538de5;
+    text-align: center; }
+
+.post {
+  border: none;
+  box-shadow: -0.1rem 0.2rem 0.4rem rgba(204, 204, 204, 0.6);
+  border-radius: 0.75rem;
+  background-color: white; }
+
 .post-form .post-form-header {
   background: #28559a;
   padding: 0.5rem; }
@@ -484,6 +508,9 @@ button {
     padding: 0.3rem 0.4rem; } }
 
 /* Profile Page */
+.profile-page-container {
+  margin-top: 2rem; }
+
 .profile {
   align-items: center;
   padding: 1rem;
@@ -493,7 +520,7 @@ button {
   box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.4); }
   .profile-grid {
     display: grid;
-    grid-template-areas: "top about" "top about" "exp edu" "github github";
+    grid-template-areas: "top about" "top about" "edu exp" "github github";
     grid-gap: 1rem; }
   .profile-top {
     grid-area: top;
@@ -528,8 +555,11 @@ button {
   .profile-top img {
     width: 230px; }
   .profile-top .icons {
+    display: flex;
     width: 100%;
-    padding: 0.5rem 2rem; }
+    padding: 1.5rem 2rem 3rem 2rem;
+    align-items: center;
+    justify-content: center; }
   .profile-top .icons a {
     color: #fff;
     margin: 0 0.3rem; }
@@ -580,17 +610,26 @@ button {
     flex-basis: 20%; }
 
 /* Mobile Styles */
+@media (max-width: 1071px) {
+  .about-bio-container p {
+    height: 20rem;
+    overflow: scroll; }
+  .profile-top .icons {
+    display: flex;
+    width: 100%;
+    padding: 1.5rem 2rem 5.7rem 2rem; } }
+
 @media (max-width: 940px) {
   .profile-top img {
     width: 180px;
     margin: auto;
-    margin-top: 1rem; }
+    margin-top: 3rem; }
   .profile-top-low-container .icons {
     justify-self: flex-end;
     margin-top: 3rem;
     align-content: flex-end; } }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   /* Profiles Page */
   .profile {
     grid-template-columns: 1fr;
@@ -598,7 +637,11 @@ button {
     .profile ul {
       display: none; }
     .profile-grid {
-      grid-template-areas: "top" "about" "exp" "edu" "github"; }
+      grid-template-areas: "top" "about" "edu" "exp" "github"; }
+    .profile-top .icons {
+      display: flex;
+      width: 100%;
+      padding: 1.5rem 2rem 1.5rem 2rem; }
     .profile-about {
       text-align: center; }
     .profile-exp {
@@ -746,6 +789,66 @@ button {
     width: 10rem;
     height: 10rem;
     padding: 1rem; } }
+
+.dashboard-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .dashboard-page-container > h1 {
+    font-family: "Roboto";
+    font-weight: 500;
+    margin-bottom: 0;
+    text-align: center; }
+  .dashboard-page-container > p {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: #538de5;
+    text-align: center; }
+
+.edit-profile-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .edit-profile-page-container > h1 {
+    font-family: "Roboto";
+    font-weight: 500;
+    margin-bottom: 0;
+    text-align: center; }
+  .edit-profile-page-container > p {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: #538de5;
+    text-align: center; }
+
+.edit-edu-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .edit-edu-page-container > h1 {
+    font-family: "Roboto";
+    font-weight: 500;
+    margin-bottom: 0;
+    text-align: center; }
+  .edit-edu-page-container > p {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: #538de5;
+    text-align: center; }
+
+.edit-exp-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .edit-exp-page-container > h1 {
+    font-family: "Roboto";
+    font-weight: 500;
+    margin-bottom: 0;
+    text-align: center; }
+  .edit-exp-page-container > p {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: #538de5;
+    text-align: center; }
 
 /* Mobile Styles */
 @media (max-width: 700px) {

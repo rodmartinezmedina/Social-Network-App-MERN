@@ -1,4 +1,43 @@
 /* Posts Page */
+.posts-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+  // text-align: center;
+
+  > h1 {
+    font-family: "Roboto";
+    font-weight: 500;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  > p {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: $primary-color-light;
+    text-align: center;
+  }
+
+  textarea {
+    // text-align: center;
+  }
+}
+
+.post {
+  border: none;
+  box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-light-4, 0.6);
+  border-radius: 0.75rem;
+  background-color: white;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  // text-align: center;
+  // padding-top: 0.5rem;
+}
+
 .post-form .post-form-header {
   background: $primary-color;
   padding: 0.5rem;

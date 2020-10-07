@@ -127,7 +127,7 @@ const EditProfile = ({
   // };
 
   return (
-    <Fragment>
+    <div className="edit-profile-page-container">
       <h1 className="large text-primary">Edit Your Profile</h1>
       <p className="lead">
         <i className="fas fa-user"></i> Let your peers know you better. Add or
@@ -332,7 +332,7 @@ const EditProfile = ({
           Go Back
         </Link>
       </form>
-    </Fragment>
+    </div>
   );
 };
 
