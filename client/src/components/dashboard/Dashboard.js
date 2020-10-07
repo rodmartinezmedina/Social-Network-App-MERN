@@ -22,22 +22,30 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <div className="dashboard-page-container">
+      {/* 1 */}
       <h1 className="large text-primary">Dashboard</h1>
+      {/* 2 */}
       <p className="lead">
         <i className="fas fa-user"></i> Welcome {user && user.name}
       </p>
+      {/* 3 */}
       {profile !== null ? (
-        <Fragment>
-          <DashboardActions />
-          <Experience experience={profile.experience} />
-          <Education education={profile.education} />
+        <div className="dashboard-elements">
+          {/* 3.1 */}
+          <DashboardActions className="actions-dash" />
+          {/* 3.2 */}
+          <Experience experience={profile.experience} className="exp-dash" />
+          {/* 3.3 */}
+          <Education education={profile.education} className="edu-dash" />
+          {/* 3.4 */}
           <div className="my-2">
             <button className="btn btn-danger" onClick={() => deleteAccount()}>
               <i className="fas fa-user-minus"></i> Delete My Account
             </button>
           </div>
-        </Fragment>
+        </div>
       ) : (
+        // 3
         <Fragment>
           <p>
             You have not filled up your profile yet, please add some information

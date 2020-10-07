@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // align-items: center;
-  // text-align: center;
+  align-items: center;
+  text-align: center;
 
   > h1 {
     font-family: "Roboto";
@@ -18,4 +18,29 @@
     color: $primary-color-light;
     text-align: center;
   }
+}
+
+.dashboard-elements {
+  display: grid;
+  grid-template-areas:
+    "actions"
+    "edu-dash exp-dash";
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+}
+
+.actions-dash {
+  grid-area: actions;
+  display: flex;
+  flex-direction: column;
+}
+
+.edu.dash {
+  grid-area: edu-dash;
+}
+
+.exp-dash {
+  grid-area: exp-dash;
 }

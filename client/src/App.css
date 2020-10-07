@@ -793,7 +793,9 @@ button {
 .dashboard-page-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
   .dashboard-page-container > h1 {
     font-family: "Roboto";
     font-weight: 500;
@@ -804,6 +806,21 @@ button {
     font-weight: 400;
     color: #538de5;
     text-align: center; }
+
+.dashboard-elements {
+  display: grid;
+  grid-template-areas: "actions" "edu-dash exp-dash"; }
+
+.actions-dash {
+  grid-area: actions;
+  display: flex;
+  flex-direction: column; }
+
+.edu.dash {
+  grid-area: edu-dash; }
+
+.exp-dash {
+  grid-area: exp-dash; }
 
 .edit-profile-page-container {
   display: flex;
