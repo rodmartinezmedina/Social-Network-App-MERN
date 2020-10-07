@@ -27,14 +27,16 @@ const ProfileTop = ({
 
       {/* 2 */}
       <div className="profile-top-low-container">
+        {/* 2.1   */}
         <p className="profile-top__status">
           {status} {company && <span> at {company}</span>}
         </p>
+        {/* 2.2 */}
         <p className="profile-top__location">
           {" "}
           {location && <span>{location}</span>}
         </p>
-
+        {/* 2.3 */}
         <div className="icons bg-primary">
           {website && (
             <a href={website} target="_blank" rel="noopener noreferrer">

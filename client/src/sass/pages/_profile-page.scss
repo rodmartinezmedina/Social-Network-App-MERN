@@ -1,11 +1,11 @@
 /* Profile Page */
 
 .profile {
-  display: grid;
-  grid-template-columns: minmax(2rem, 30%) minmax(2rem, 70%);
+  // display: grid;
+  // grid-template-columns: minmax(50%, 50%) minmax(2rem, 50%);
   align-items: center;
   // justify-content: center;
-  grid-gap: 2rem;
+  // grid-gap: 2rem;
   padding: 1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
@@ -40,6 +40,7 @@
 
     &-low-container {
       width: 100%;
+      align-self: flex-end;
     }
 
     &__status {
@@ -70,7 +71,7 @@
   }
 
   &-top img {
-    width: 250px;
+    width: 230px;
   }
 
   &-top .icons {
@@ -95,6 +96,7 @@
   //
   &-about {
     grid-area: about;
+    // width: 100%;
     text-align: center;
     border-radius: 0.5rem;
     box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.2);
@@ -162,6 +164,30 @@
 }
 
 /* Mobile Styles */
+@media (max-width: 940px) {
+  .profile {
+    &-top img {
+      width: 180px;
+      margin: auto;
+      margin-top: 1rem;
+    }
+  }
+
+  .profile-top-low-container {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-end;
+    // align-content: flex-end;
+
+    .icons {
+      justify-self: flex-end;
+      margin-top: 3rem;
+      align-content: flex-end;
+      // margin-bottom: 0;
+    }
+  }
+}
+
 @media (max-width: 700px) {
   /* Profiles Page */
   .profile {
@@ -170,13 +196,6 @@
 
     ul {
       display: none;
-    }
-
-    /* Profile Page */
-    &-top img,
-    img {
-      width: 200px;
-      margin: auto;
     }
 
     &-grid {
