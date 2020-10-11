@@ -111,6 +111,14 @@
   height: 1px;
   background: $color-grey-light-4;
   margin: 0.5rem 0;
+
+  &-dashboard {
+    height: 1px;
+    background-color: $primary-color-dark;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* Overlay */
@@ -125,12 +133,15 @@
 
 .table th,
 .table td {
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: left;
+}
+.table thead {
 }
 
 .table th {
-  background: $color-grey-light-4;
+  background: $white-color;
+  color: $primary-color;
   border-radius: 0.5rem;
 }
 

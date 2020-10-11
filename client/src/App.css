@@ -57,6 +57,12 @@ img {
 /* Text Styles*/
 .font1 {
   font-family: "Open Sans"; }
+  .font1-light {
+    font-weight: 300; }
+  .font1-reg {
+    font-weight: 400; }
+  .font1-bold {
+    font-weight: 600; }
 
 .font2 {
   font-family: "Roboto"; }
@@ -64,6 +70,10 @@ img {
     font-weight: 400; }
   .font2-bold {
     font-weight: 500; }
+  .font2-xbold {
+    font-weight: 700; }
+  .font2-italic {
+    font-style: italic; }
 
 .x-large {
   font-size: 4rem;
@@ -201,6 +211,12 @@ img {
   height: 1px;
   background: #ccc;
   margin: 0.5rem 0; }
+  .line-dashboard {
+    height: 1px;
+    background-color: #142a5e;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto; }
 
 /* Overlay */
 .dark-overlay {
@@ -213,11 +229,12 @@ img {
 
 .table th,
 .table td {
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: left; }
 
 .table th {
-  background: #ccc;
+  background: #fff;
+  color: #28559a;
   border-radius: 0.5rem; }
 
 /* Mobile Styles */
@@ -829,20 +846,23 @@ button {
   justify-content: center;
   align-items: center;
   text-align: center; }
-  .dashboard-page-container > h1 {
-    font-family: "Roboto";
-    font-weight: 500;
-    margin-bottom: 0;
-    text-align: center; }
-  .dashboard-page-container > p {
-    font-family: "Roboto";
-    font-weight: 400;
-    color: #538de5;
-    text-align: center; }
+
+.dashboard-header > h1 {
+  font-family: "Roboto";
+  font-weight: 500;
+  margin-bottom: 0;
+  text-align: center; }
+
+.dashboard-header > p {
+  font-family: "Roboto";
+  font-weight: 400;
+  color: #538de5;
+  text-align: center; }
 
 .dashboard-elements {
-  display: grid;
-  grid-template-areas: "actions" "edu-dash exp-dash"; }
+  display: flex;
+  align-items: flex-start;
+  justify-content: center; }
 
 .actions-dash {
   grid-area: actions;
@@ -854,6 +874,10 @@ button {
 
 .exp-dash {
   grid-area: exp-dash; }
+
+.dashboard-top {
+  display: flex;
+  flex-direction: column; }
 
 .edit-profile-page-container {
   display: flex;

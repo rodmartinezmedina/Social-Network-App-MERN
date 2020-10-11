@@ -6,42 +6,34 @@ import { deleteExperience } from "../../actions/profile";
 
 const Experience = ({ experience, deleteExperience }) => {
   const experiences = experience.map((exp) => (
-    <tr key={exp._id}>
-      <td>{exp.company}</td>
-      <td className="hide-sm">{exp.title}</td>
-      <td>
+    <div key={exp._id}>
+      <h3 className="text-dark">{exp.company}</h3>
+      <h3 className="hide-sm">{exp.title}</h3>
+      <p>
         <Moment format="DD/MM/YYYY">{exp.from}</Moment> -{" "}
-        {exp.to === null ? (
-          " Now"
-        ) : (
-          <Moment format="DD/MM/YYYY">{exp.to}</Moment>
-        )}
-      </td>
-      <td>
-        <button
-          onClick={() => deleteExperience(exp._id)}
-          className="btn btn-danger"
-        >
-          Delete
-        </button>
-      </td>
-    </tr>
+        {!exp.to ? "Now" : <Moment format="DD/MM/YYYY">{exp.to}</Moment>}
+      </p>
+      <p>
+        <strong>Position: </strong> {exp.title}
+      </p>
+      <p>
+        <strong>Description: </strong> {exp.description}
+      </p>
+      <button
+        onClick={() => deleteExperience(exp._id)}
+        className="btn btn-danger"
+      >
+        Delete
+      </button>
+    </div>
   ));
 
   return (
-    <Fragment>
-      <h2 className="my2">Experience Credentials</h2>
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Company</th>
-            <th className="hide-sm">Title</th>
-            <th className="hide-sm">Years</th>
-          </tr>
-        </thead>
-        <tbody>{experiences}</tbody>
-      </table>
-    </Fragment>
+    <div className="bg-white">
+      <h2 className="my2 font2-bold">Experience</h2>
+      <span className="line-dashboard"></span>
+      <tbody className="font1-reg">{experiences}</tbody>
+    </div>
   );
 };
 
@@ -51,3 +43,41 @@ Experience.propTypes = {
 };
 
 export default connect(null, { deleteExperience })(Experience);
+
+// const experiences = experience.map((exp) => (
+//   <tr key={exp._id}>
+//     <td>{exp.company}</td>
+//     <td className="hide-sm">{exp.title}</td>
+//     <td>
+//       <Moment format="DD/MM/YYYY">{exp.from}</Moment> -{" "}
+//       {exp.to === null ? (
+//         " Now"
+//       ) : (
+//         <Moment format="DD/MM/YYYY">{exp.to}</Moment>
+//       )}
+//     </td>
+//     <td>
+//       <button
+//         onClick={() => deleteExperience(exp._id)}
+//         className="btn btn-danger"
+//       >
+//         Delete
+//       </button>
+//     </td>
+//   </tr>
+// ));
+
+// <Fragment>
+// <h2 className="my2 font2-bold">Experience</h2>
+// <table className="table">
+//   <thead>
+//     <tr>
+//       <th className="">Company</th>
+//       <th className="hide-sm">Title</th>
+//       <th className="hide-sm">Years</th>
+//     </tr>
+//   </thead>
+//   <span className="line-dashboard"></span>
+//   <tbody className="font1-reg">{experiences}</tbody>
+// </table>
+// </Fragment>

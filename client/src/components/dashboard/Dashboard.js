@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile, deleteAccount } from "../../actions/profile";
 import Spinner from "../layout/Spinner";
+import ProfileTop from "../profile/ProfileTop";
 import DashboardActions from "./DashboardActions";
 import Experience from "./Experience";
 import Education from "./Education";
@@ -22,28 +23,41 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <div className="dashboard-page-container">
-      {/* 1 */}
-      <h1 className="large text-primary">Dashboard</h1>
-      {/* 2 */}
-      <p className="lead">
-        <i className="fas fa-user"></i> Welcome {user && user.name}
-      </p>
-      {/* 3 */}
+      {/* HEADER */}
+      <div className="dashboard-header">
+        <h1 className="large text-primary">Dashboard</h1>
+        <p className="lead">
+          <i className="fas fa-user"></i> Welcome {user && user.name}
+        </p>
+      </div>
+
+      {/* MAIN */}
       {profile !== null ? (
-        <div className="dashboard-elements">
-          {/* 3.1 */}
-          <DashboardActions className="actions-dash" />
-          {/* 3.2 */}
-          <Experience experience={profile.experience} className="exp-dash" />
-          {/* 3.3 */}
-          <Education education={profile.education} className="edu-dash" />
-          {/* 3.4 */}
-          <div className="my-2">
-            <button className="btn btn-danger" onClick={() => deleteAccount()}>
-              <i className="fas fa-user-minus"></i> Delete My Account
-            </button>
+        <>
+          <div className="dashboard-elements">
+            {/* 1 */}
+            <div className="dashboard-top">
+              <ProfileTop
+                profile={profile}
+                className="dashboard-profile-card"
+              />
+            </div>
+
+            {/* 2 */}
+            <div>
+              <DashboardActions className="actions-dash" />
+              <Experience
+                experience={profile.experience}
+                className="exp-dash"
+              />
+              <Education education={profile.education} className="edu-dash" />
+            </div>
+            {/* 3 */}
           </div>
-        </div>
+          <button className="btn btn-danger" onClick={() => deleteAccount()}>
+            <i className="fas fa-user-minus"></i> Delete My Account
+          </button>
+        </>
       ) : (
         // 3
         <Fragment>

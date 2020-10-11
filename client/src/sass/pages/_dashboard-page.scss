@@ -4,7 +4,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
 
+.dashboard-header {
   > h1 {
     font-family: "Roboto";
     font-weight: 500;
@@ -21,14 +23,13 @@
 }
 
 .dashboard-elements {
-  display: grid;
-  grid-template-areas:
-    "actions"
-    "edu-dash exp-dash";
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
+  // display: grid;
+  // grid-template-areas:
+  //   "actions"
+  //   "edu-dash exp-dash";
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .actions-dash {
@@ -43,4 +44,9 @@
 
 .exp-dash {
   grid-area: exp-dash;
+}
+
+.dashboard-top {
+  display: flex;
+  flex-direction: column;
 }

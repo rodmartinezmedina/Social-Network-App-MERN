@@ -2,6 +2,15 @@
 
 .font1 {
   font-family: "Open Sans";
+  &-light {
+    font-weight: 300;
+  }
+  &-reg {
+    font-weight: 400;
+  }
+  &-bold {
+    font-weight: 600;
+  }
 }
 
 .font2 {
@@ -11,6 +20,12 @@
   }
   &-bold {
     font-weight: 500;
+  }
+  &-xbold {
+    font-weight: 700;
+  }
+  &-italic {
+    font-style: italic;
   }
 }
 
