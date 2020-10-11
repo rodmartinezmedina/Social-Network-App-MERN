@@ -31,7 +31,7 @@ const Experience = ({ experience, deleteExperience }) => {
 
   return (
     <div className="bg-white">
-      <h2 className="dash-exp-header my2 font2-bold">
+      <h2 className="my2 font2-bold">
         Experience{" "}
         <span>
           <Link to="/add-experience" className="btn-add">

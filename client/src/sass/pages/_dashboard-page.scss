@@ -1,19 +1,19 @@
 .dashboard {
   &-page-container {
-    // text-align: center;
     display: grid;
     grid-template-areas:
       "header header header"
       "actions actions actions"
       "card experience experience"
       "card education education"
-      "delete delete delete";
+      " delete . . ";
     grid-gap: 1rem;
   }
 
   // HEADER
   &-header {
     grid-area: header;
+
     > h1 {
       font-family: "Roboto";
       font-weight: 500;
@@ -39,16 +39,17 @@
 
   // CARD CONTAINER
   &-card {
+    grid-area: card;
     &-top {
-      grid-area: card;
-      border-radius: 0.5rem;
-      box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.5);
-      background-color: $white-color;
-    }
-    &-skills {
-      text-align: center;
+      // border-radius: 0.5rem;
+      // box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.5);
+      // background-color: $white-color;
     }
   }
+  &-skills {
+    text-align: center;
+  }
+
   // EXPERIENCE
   &-exp-container {
     grid-area: experience;
@@ -58,6 +59,12 @@
   &-edu-container {
     grid-area: education;
   }
+}
+
+.btn-delete-profile {
+  grid-area: delete;
+  // grid-column: 2 / 3;
+  // grid-row: 6 /7;
 }
 
 /* Mobile Styles */

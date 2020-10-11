@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Moment from "react-moment";
 import { connect } from "react-redux";
@@ -6,44 +7,40 @@ import { deleteEducation } from "../../actions/profile";
 
 const Education = ({ education, deleteEducation }) => {
   const educations = education.map((edu) => (
-    <tr key={edu._id}>
-      <td>{edu.school}</td>
-      <td className="hide-sm">{edu.degree}</td>
-      <td>
+    <div key={edu._id}>
+      <h3 className="text-dark">{edu.school}</h3>
+      <h3 className="hide-sm">{edu.degree}</h3>
+
+      <p>
         <Moment format="DD/MM/YYYY">{edu.from}</Moment> -{" "}
         {edu.to === null ? (
           " Now"
         ) : (
           <Moment format="DD/MM/YYYY">{edu.to}</Moment>
         )}
-      </td>
-      <td>
-        <button
-          onClick={() => deleteEducation(edu._id)}
-          className="btn btn-danger"
-        >
-          Delete
-        </button>
-      </td>
-    </tr>
+      </p>
+
+      <button
+        onClick={() => deleteEducation(edu._id)}
+        className="btn btn-danger"
+      >
+        Delete
+      </button>
+    </div>
   ));
 
   return (
-    <Fragment>
-      <h2 className="my2 font2-bold">Education</h2>
-
-      <table className="table">
-        <thead>
-          <tr>
-            <th className="font2-xbold">School</th>
-            <th className="font2-xbold hide-sm">Degree</th>
-            <th className="font2-xbold hide-sm">Years</th>
-          </tr>
-        </thead>
-
-        <tbody>{educations}</tbody>
-      </table>
-    </Fragment>
+    <div className="bg-white">
+      <h2 className="my2 font2-bold">
+        Education
+        <span>
+          <Link to="/add-education" className="btn-add">
+            +
+          </Link>
+        </span>
+      </h2>
+      <div>{educations}</div>
+    </div>
   );
 };
 
