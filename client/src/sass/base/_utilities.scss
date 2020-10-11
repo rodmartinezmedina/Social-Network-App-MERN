@@ -72,6 +72,24 @@
   color: $white-color;
 }
 
+.bg-grey-dark {
+  // background: $primary-color;
+  background-image: linear-gradient(
+    to right,
+    $color-grey-dark-1 $primary-color,
+    $color-grey-dark-1
+  );
+  color: $white-color;
+}
+
+.bg-grey-light {
+  background-image: linear-gradient(
+    to right,
+    $color-grey-light-1,
+    $color-grey-light-4
+  );
+}
+
 .bg-light {
   background: $color-grey-light-1;
   color: $color-grey-dark-1;
@@ -99,7 +117,7 @@
 }
 
 .bg-light {
-  border: $color-grey-light-4 solid 1px;
+  // border: $color-grey-light-4 solid 1px;
 }
 
 /* Global Styles */

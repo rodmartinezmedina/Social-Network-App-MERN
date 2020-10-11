@@ -179,6 +179,13 @@ img {
   background-image: linear-gradient(to right, #142a5e, #28559a, #142a5e);
   color: #fff; }
 
+.bg-grey-dark {
+  background-image: linear-gradient(to right, #333 #28559a, #333);
+  color: #fff; }
+
+.bg-grey-light {
+  background-image: linear-gradient(to right, #faf9f9, #ccc); }
+
 .bg-light {
   background: #faf9f9;
   color: #333; }
@@ -198,9 +205,6 @@ img {
 .bg-white {
   background: #fff;
   color: #333;
-  border: #ccc solid 1px; }
-
-.bg-light {
   border: #ccc solid 1px; }
 
 /* Global Styles */
@@ -846,7 +850,7 @@ button {
 
 .dashboard-page-container {
   display: grid;
-  grid-template-areas: "header header header" "actions actions actions" "card experience experience" "card education education" " delete . . ";
+  grid-template-areas: "header header header header header" "actions actions actions actions actions" "card experience experience experience experience " "card education education education education" " delete . . . .";
   grid-gap: 1rem; }
 
 .dashboard-header {

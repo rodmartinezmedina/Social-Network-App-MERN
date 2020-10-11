@@ -2,11 +2,11 @@
   &-page-container {
     display: grid;
     grid-template-areas:
-      "header header header"
-      "actions actions actions"
-      "card experience experience"
-      "card education education"
-      " delete . . ";
+      "header header header header header"
+      "actions actions actions actions actions"
+      "card experience experience experience experience "
+      "card education education education education"
+      " delete . . . .";
     grid-gap: 1rem;
   }
 

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile, deleteAccount } from "../../actions/profile";
 import Spinner from "../layout/Spinner";
-import DashboardCard from "../profile/ProfileTop";
+import DashboardCard from "../dashboard/DashboardCard";
 import DashboardActions from "./DashboardActions";
 import Experience from "./Experience";
 import Education from "./Education";
@@ -38,7 +38,7 @@ const Dashboard = ({
           {/* CARD */}
           <div className="dashboard-card">
             <DashboardCard profile={profile} />
-            <div className="dashboard-skills">
+            <div className="dashboard-skills .bg-grey-light">
               <h2 className="text-primary font2-reg">Skill Set</h2>
               <div className="skills-list-profile">
                 {profile.skills.map((skill, index) => (
