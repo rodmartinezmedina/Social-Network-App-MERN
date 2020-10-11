@@ -26,14 +26,3 @@
 @import "pages/edit-profile-page";
 @import "pages/edit-edu-page";
 @import "pages/edit-exp-page";
-
-/* Mobile Styles */
-@media (max-width: 700px) {
-  .dash-buttons a {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.2rem;
-  }
-}
-
-// mobile

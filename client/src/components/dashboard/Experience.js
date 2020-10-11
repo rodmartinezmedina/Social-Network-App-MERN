@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Moment from "react-moment";
 import { connect } from "react-redux";
@@ -30,9 +31,17 @@ const Experience = ({ experience, deleteExperience }) => {
 
   return (
     <div className="bg-white">
-      <h2 className="my2 font2-bold">Experience</h2>
+      <h2 className="dash-exp-header my2 font2-bold">
+        Experience{" "}
+        <span>
+          <Link to="/add-experience" className="btn-add">
+            +
+          </Link>
+        </span>
+      </h2>
+
       <span className="line-dashboard"></span>
-      <tbody className="font1-reg">{experiences}</tbody>
+      <div className="font1-reg">{experiences}</div>
     </div>
   );
 };

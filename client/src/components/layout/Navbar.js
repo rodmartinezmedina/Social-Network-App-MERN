@@ -1,10 +1,34 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
+import Dashboard from "../dashboard/Dashboard";
 
-const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+// {
+//   getCurrentProfile,
+//   deleteAccount,
+//   auth: { user },
+//   profile: { profile, loading },
+// }
+
+const Navbar = ({
+  auth: {
+    user,
+    // user: { name },
+    isAuthenticated,
+    loading,
+  },
+  logout,
+}) => {
+  // useEffect(() => {
+  //   getCurrentProfile();
+  // }, [getCurrentProfile]);
+
+  let trimmedUserName = (username) => {
+    return username.trim().split(" ")[0];
+  };
+
   const authLinks = (
     <ul>
       <li>
@@ -16,7 +40,10 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <li>
         <Link to="/dashboard">
           <i className="fas fa-user"></i>{" "}
-          <span className="hide-sm">Dashboard</span>
+          <span className="hide-sm">
+            {user ? trimmedUserName(user.name) : "Profile"}
+          </span>
+          {/* <span className="hide-sm">{user ? user.name : "Dashboard"}</span> */}
         </Link>
       </li>
       <li>

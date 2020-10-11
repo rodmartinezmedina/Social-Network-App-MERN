@@ -1,52 +1,92 @@
-.dashboard-page-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.dashboard-header {
-  > h1 {
-    font-family: "Roboto";
-    font-weight: 500;
-    margin-bottom: 0;
-    text-align: center;
+.dashboard {
+  &-page-container {
+    // text-align: center;
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "actions actions actions"
+      "card experience experience"
+      "card education education"
+      "delete delete delete";
+    grid-gap: 1rem;
   }
 
-  > p {
-    font-family: "Roboto";
-    font-weight: 400;
-    color: $primary-color-light;
+  // HEADER
+  &-header {
+    grid-area: header;
+    > h1 {
+      font-family: "Roboto";
+      font-weight: 500;
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    > p {
+      font-family: "Roboto";
+      font-weight: 400;
+      color: $primary-color-light;
+      text-align: center;
+    }
+  }
+  // ACTIONS
+  &-actions-list {
+    grid-area: actions;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  // CARD CONTAINER
+  &-card {
+    &-top {
+      grid-area: card;
+      border-radius: 0.5rem;
+      box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.5);
+      background-color: $white-color;
+    }
+    &-skills {
+      text-align: center;
+    }
+  }
+  // EXPERIENCE
+  &-exp-container {
+    grid-area: experience;
+  }
+
+  // EDUCATION
+  &-edu-container {
+    grid-area: education;
   }
 }
 
-.dashboard-elements {
-  // display: grid;
-  // grid-template-areas:
-  //   "actions"
-  //   "edu-dash exp-dash";
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+/* Mobile Styles */
+@media (max-width: 700px) {
+  .dash-buttons a {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.2rem;
+  }
 }
 
-.actions-dash {
-  grid-area: actions;
-  display: flex;
-  flex-direction: column;
-}
+// &-top img {
+//   width: 230px;
+// }
 
-.edu.dash {
-  grid-area: edu-dash;
-}
+// &-top .icons {
+//   display: flex;
+//   width: 100%;
+//   padding: 1.5rem 2rem 2rem 2rem;
+//   align-items: center;
+//   justify-content: center;
+// }
 
-.exp-dash {
-  grid-area: exp-dash;
-}
+// &-top .icons a {
+//   color: $white-color;
+//   margin: 0 0.3rem;
+// }
 
-.dashboard-top {
-  display: flex;
-  flex-direction: column;
-}
+// &-top .icons a:hover {
+//   color: $primary-color-lighter;
+//   // color: $secondary-color;
+// }

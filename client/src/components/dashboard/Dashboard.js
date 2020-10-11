@@ -25,41 +25,42 @@ const Dashboard = ({
     <div className="dashboard-page-container">
       {/* HEADER */}
       <div className="dashboard-header">
-        <h1 className="large text-primary">Dashboard</h1>
+        <h1 className="large text-primary">Profile</h1>
         <p className="lead">
           <i className="fas fa-user"></i> Welcome {user && user.name}
         </p>
       </div>
+      {/* ACTIONS */}
+      <DashboardActions className="dashboard-actions-container" />
 
-      {/* MAIN */}
       {profile !== null ? (
         <>
-          <div className="dashboard-elements">
-            {/* 1 */}
-            <div className="dashboard-top">
-              <ProfileTop
-                profile={profile}
-                className="dashboard-profile-card"
-              />
-            </div>
-
-            {/* 2 */}
-            <div>
-              <DashboardActions className="actions-dash" />
-              <Experience
-                experience={profile.experience}
-                className="exp-dash"
-              />
-              <Education education={profile.education} className="edu-dash" />
-            </div>
-            {/* 3 */}
+          {/* CARD */}
+          <div className="dashboard-card">
+            <ProfileTop profile={profile} className="dashboard-card-top" />
+            <div className="dashboard-card-skills">SKILLS GO HERE</div>
           </div>
-          <button className="btn btn-danger" onClick={() => deleteAccount()}>
+
+          {/* EXPERIENCE */}
+          <Experience
+            experience={profile.experience}
+            className="dashboard-exp-container"
+          />
+          {/* EDUCATION */}
+          <Education
+            education={profile.education}
+            className="dashboard-edu-container"
+          />
+
+          {/* FOOTER */}
+          <button
+            className="btn btn-danger btn-delete-profile"
+            onClick={() => deleteAccount()}
+          >
             <i className="fas fa-user-minus"></i> Delete My Account
           </button>
         </>
       ) : (
-        // 3
         <Fragment>
           <p>
             You have not filled up your profile yet, please add some information
