@@ -47,10 +47,9 @@
 
     &__status {
       color: $secondary-color;
-      // color: $primary-color;
       min-height: 2rem;
+      letter-spacing: 1px;
       font-weight: 500;
-      font-family: "Roboto";
     }
     ///////
     &__lower-container {
@@ -59,11 +58,9 @@
 
     &__name {
       color: $color-grey-dark-1;
-      // color: $primary-color-dark;
-      // color: orange;
       font-family: "Roboto";
-      font-weight: 500;
-      font-size: 2rem;
+      font-weight: 400;
+      font-size: 2.2rem;
     }
 
     &__location {

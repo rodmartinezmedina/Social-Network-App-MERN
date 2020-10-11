@@ -55,6 +55,16 @@ img {
   width: 100%; }
 
 /* Text Styles*/
+.font1 {
+  font-family: "Open Sans"; }
+
+.font2 {
+  font-family: "Roboto"; }
+  .font2-reg {
+    font-weight: 400; }
+  .font2-bold {
+    font-weight: 500; }
+
 .x-large {
   font-size: 4rem;
   line-height: 1.2;
@@ -541,15 +551,15 @@ button {
     .profile-top__status {
       color: #e39d52;
       min-height: 2rem;
-      font-weight: 500;
-      font-family: "Roboto"; }
+      letter-spacing: 1px;
+      font-weight: 500; }
     .profile-top__lower-container {
       width: 100%; }
     .profile-top__name {
       color: #333;
       font-family: "Roboto";
-      font-weight: 500;
-      font-size: 2rem; }
+      font-weight: 400;
+      font-size: 2.2rem; }
     .profile-top__location {
       color: #333;
       margin-bottom: 0.5rem; }

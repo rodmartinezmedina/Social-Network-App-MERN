@@ -28,11 +28,11 @@ const ProfileTop = ({
       {/* 2 */}
       <div className="profile-top-low-container">
         {/* 2.1   */}
-        <p className="profile-top__status">
+        <p className="profile-top__status font2-bold">
           {status} {company && <span> at {company}</span>}
         </p>
         {/* 2.2 */}
-        <p className="profile-top__location">
+        <p className="profile-top__location font2-bold">
           {" "}
           {location && <span>{location}</span>}
         </p>

@@ -1,4 +1,19 @@
 /* Text Styles*/
+
+.font1 {
+  font-family: "Open Sans";
+}
+
+.font2 {
+  font-family: "Roboto";
+  &-reg {
+    font-weight: 400;
+  }
+  &-bold {
+    font-weight: 500;
+  }
+}
+
 .x-large {
   font-size: 4rem;
   line-height: 1.2;
