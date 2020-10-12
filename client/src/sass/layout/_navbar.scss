@@ -1,68 +1,68 @@
-/* Navbar */
+// /* Navbar */
 
-#nav-logo {
-  color: $primary-color-lighter;
-  font-weight: 400;
-  letter-spacing: 0.2rem;
+// #nav-logo {
+//   color: $primary-color-lighter;
+//   font-weight: 400;
+//   letter-spacing: 0.2rem;
 
-  &:hover {
-    color: $primary-color-lightest;
-  }
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 2rem;
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  top: 0;
-  border-bottom: solid 1px $primary-color;
-  opacity: 0.9;
-  color: $primary-color-light;
-  font-family: "Roboto";
+//   &:hover {
+//     color: $primary-color-lightest;
+//   }
+// }
+// .navbar {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding: 0.7rem 2rem;
+//   position: fixed;
+//   z-index: 1;
+//   width: 100%;
+//   top: 0;
+//   border-bottom: solid 1px $primary-color;
+//   opacity: 0.9;
+//   color: $primary-color-light;
+//   font-family: "Roboto";
 
-  ul {
-    display: flex;
-  }
+//   ul {
+//     display: flex;
+//   }
 
-  a {
-    color: $white-color;
-    padding: 0.45rem;
-    margin: 0 0.25rem;
+//   a {
+//     color: $white-color;
+//     padding: 0.45rem;
+//     margin: 0 0.25rem;
 
-    &:hover {
-      color: $primary-color-lightest;
-    }
+//     &:hover {
+//       color: $primary-color-lightest;
+//     }
 
-    &:active {
-      color: $primary-color-lightest;
-    }
-  }
-}
-
-// .navbar a .navbar .welcome span {
-//   margin-right: 0.6rem;
+//     &:active {
+//       color: $primary-color-lightest;
+//     }
+//   }
 // }
 
-@media (max-width: 700px) {
-  /* Navbar */
-  .navbar {
-    display: block;
-    text-align: center;
-  }
+// // .navbar a .navbar .welcome span {
+// //   margin-right: 0.6rem;
+// // }
 
-  .navbar ul {
-    text-align: center;
-    justify-content: center;
-  }
+// @media (max-width: 700px) {
+//   /* Navbar */
+//   .navbar {
+//     display: block;
+//     text-align: center;
+//   }
 
-  .navbar h1 {
-    margin-bottom: 1rem;
-  }
+//   .navbar ul {
+//     text-align: center;
+//     justify-content: center;
+//   }
 
-  .navbar .welcome {
-    display: none;
-  }
-}
+//   .navbar h1 {
+//     margin-bottom: 1rem;
+//   }
+
+//   .navbar .welcome {
+//     display: none;
+//   }
+// }
