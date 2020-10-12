@@ -7,18 +7,31 @@ import { deleteEducation } from "../../actions/profile";
 
 const Education = ({ education, deleteEducation }) => {
   const educations = education.map((edu) => (
-    <div key={edu._id}  className="dashboard-edu-list">
-      <h3 className="text-dark">{edu.school}</h3>
-      <h3 className="hide-sm">{edu.degree}</h3>
+    <div key={edu._id} className="dashboard-edu-list">
+      <div className="dashboard-edu-list-top">
+        <h3 className="text-dark edu-list-top-inst">
+          Institution: {edu.school}
+        </h3>
+        <p>
+          <Moment format="DD/MM/YYYY">{edu.from}</Moment> -{" "}
+          {edu.to === null ? (
+            " Now"
+          ) : (
+            <Moment format="DD/MM/YYYY">{edu.to}</Moment>
+          )}
+        </p>
+      </div>
 
-      <p>
-        <Moment format="DD/MM/YYYY">{edu.from}</Moment> -{" "}
-        {edu.to === null ? (
-          " Now"
-        ) : (
-          <Moment format="DD/MM/YYYY">{edu.to}</Moment>
-        )}
-      </p>
+      <div className="dashboard-edu-list-bottom">
+        <p>
+          <strong>Degree: </strong>
+          {edu.degree}
+        </p>
+
+        <p>
+          <strong>Description: </strong> {edu.description}
+        </p>
+      </div>
 
       <button
         onClick={() => deleteEducation(edu._id)}
@@ -39,6 +52,7 @@ const Education = ({ education, deleteEducation }) => {
           </Link>
         </span>
       </h2>
+      <div className="line"></div>
       <div>{educations}</div>
     </div>
   );

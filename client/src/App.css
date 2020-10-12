@@ -920,15 +920,32 @@ button {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5rem; }
+    .dashboard-exp-list-top-inst {
+      max-width: 50%; }
   .dashboard-exp-list-bottom {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    max-width: 65%; }
 
 .dashboard-edu-container {
   border-radius: 0.5rem;
   box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.5);
   background-color: #fff;
+  margin-bottom: 2rem;
   padding: 1rem; }
+
+.dashboard-edu-list {
+  margin-bottom: 0.5rem; }
+  .dashboard-edu-list-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem; }
+    .dashboard-edu-list-top-inst {
+      max-width: 50%; }
+  .dashboard-edu-list-bottom {
+    display: flex;
+    flex-direction: column;
+    max-width: 65%; }
 
 .btn-add {
   border-radius: 50%;
@@ -951,6 +968,63 @@ button {
   text-align: center;
   display: flex;
   margin-top: 4rem; }
+
+@media (max-width: 900px) {
+  .dashboard-card-img {
+    width: 170px; }
+  .dashboard-exp-container h2 {
+    text-align: center;
+    margin-bottom: 0.7rem; }
+  .dashboard-exp-list {
+    text-align: center;
+    margin-bottom: 2.5rem; }
+    .dashboard-exp-list-top {
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-bottom: 0.5rem; }
+      .dashboard-exp-list-top-inst {
+        max-width: 50%; }
+    .dashboard-exp-list-bottom {
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+      .dashboard-exp-list-bottom p {
+        display: flex;
+        flex-direction: column; }
+  .dashboard-edu-container h2 {
+    text-align: center;
+    margin-bottom: 0.7rem; }
+  .dashboard-edu-list {
+    text-align: center;
+    margin-bottom: 2.5rem; }
+    .dashboard-edu-list-top {
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-bottom: 0.5rem; }
+      .dashboard-edu-list-top-inst {
+        max-width: 50%; }
+    .dashboard-edu-list-bottom {
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+      .dashboard-edu-list-bottom p {
+        display: flex;
+        flex-direction: column; } }
+
+@media (max-width: 750px) {
+  .dashboard-main-container {
+    display: flex;
+    flex-direction: column; } }
 
 .edit-profile-page-container {
   display: flex;

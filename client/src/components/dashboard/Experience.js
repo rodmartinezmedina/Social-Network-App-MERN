@@ -10,7 +10,7 @@ const Experience = ({ experience, deleteExperience }) => {
   const experiences = experience.map((exp) => (
     <div key={exp._id} className="dashboard-exp-list">
       <div className="dashboard-exp-list-top">    
-      <h3 className="text-dark">Company: {exp.company}</h3>
+      <h3 className="text-dark exp-list-top-inst">Company: {exp.company}</h3>
       <p>
         <Moment format="DD/MM/YYYY">{exp.from}</Moment> -{" "}
         {!exp.to ? "Now" : <Moment format="DD/MM/YYYY">{exp.to}</Moment>}
@@ -48,7 +48,8 @@ const Experience = ({ experience, deleteExperience }) => {
         </span>
       </h2>
 
-      <span className="line-dashboard"></span>
+      <div className="line"></div>
+      
       <div className="font1-reg">{experiences}</div>
     </div>
   );

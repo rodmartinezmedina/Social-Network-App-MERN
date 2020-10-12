@@ -119,10 +119,14 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 0.5rem;
+      &-inst {
+        max-width: 50%;
+      }
     }
     &-bottom {
       display: flex;
       flex-direction: column;
+      max-width: 65%;
     }
   }
 
@@ -131,7 +135,25 @@
     border-radius: 0.5rem;
     box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.5);
     background-color: $white-color;
+    margin-bottom: 2rem;
     padding: 1rem;
+  }
+
+  &-edu-list {
+    margin-bottom: 0.5rem;
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      &-inst {
+        max-width: 50%;
+      }
+    }
+    &-bottom {
+      display: flex;
+      flex-direction: column;
+      max-width: 65%;
+    }
   }
 }
 
@@ -179,6 +201,100 @@
 }
 
 // /* Mobile Styles */
+@media (max-width: 900px) {
+  .dashboard {
+    &-card {
+      &-img {
+        width: 170px;
+      }
+    }
+
+    // &--edu-and-exp-container {
+    // }
+
+    &-exp-container {
+      h2 {
+        text-align: center;
+        margin-bottom: 0.7rem;
+      }
+    }
+
+    &-exp-list {
+      text-align: center;
+      margin-bottom: 2.5rem;
+
+      &-top {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 0.5rem;
+        &-inst {
+          max-width: 50%;
+        }
+      }
+
+      &-bottom {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        p {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    &-edu-container {
+      h2 {
+        text-align: center;
+        margin-bottom: 0.7rem;
+      }
+    }
+
+    &-edu-list {
+      text-align: center;
+      margin-bottom: 2.5rem;
+
+      &-top {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 0.5rem;
+        &-inst {
+          max-width: 50%;
+        }
+      }
+
+      &-bottom {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        p {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .dashboard {
+    &-main-container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
 // @media (max-width: 700px) {
 //   .dash-buttons a {
 //     display: block;
