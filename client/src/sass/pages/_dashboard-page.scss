@@ -2,11 +2,16 @@
   &-page-container {
     display: grid;
     grid-template-areas:
-      "header header header header header"
-      "actions actions actions actions actions"
-      "card experience experience experience experience "
-      "card education education education education"
-      " delete . . . .";
+      "header"
+      "actions"
+      "main";
+    // "delete";
+    // grid-template-areas:
+    //   "header header header header "
+    //   "actions actions actions actions "
+    //   "card experience experience experience "
+    //   "card education education education "
+    //   "delete delete delete delete  ";
     grid-gap: 1rem;
   }
 
@@ -32,49 +37,155 @@
   &-actions-list {
     grid-area: actions;
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    // justify-content: center;
+    // align-items: center;
+    // align-content: center;
+  }
+
+  // MAIN CONTAINER
+  &-main-container {
+    grid-area: main;
+    display: flex;
+    // grid-area: "card experience" "card education";
+  }
+
+  // ASIDE CONTAINER
+  &-aside-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    text-align: center;
   }
 
   // CARD CONTAINER
   &-card {
-    grid-area: card;
-    &-top {
-      // border-radius: 0.5rem;
-      // box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.5);
-      // background-color: $white-color;
+    &-component {
+      border-radius: 0.5rem;
+      box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.5);
+      background-color: $white-color;
+      margin-bottom: 1rem;
+    }
+    &-img {
+      text-align: center;
+      width: 230px;
     }
   }
   &-skills {
     text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.5);
+    background-color: $white-color;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem 0.5rem;
+    }
+  }
+
+  &-eachSkill {
+    font-size: 0.9rem;
+    font-family: "Roboto";
+    background: $white-color;
+    color: $color-grey-dark-1;
+    border: $color-grey-light-4 solid 1px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+    // width: 30%;
+  }
+
+  &-edu-and-exp-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 2rem;
   }
 
   // EXPERIENCE
   &-exp-container {
-    grid-area: experience;
+    border-radius: 0.5rem;
+    box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.5);
+    background-color: $white-color;
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+
+  &-exp-list {
+    margin-bottom: 0.5rem;
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    &-bottom {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   // EDUCATION
   &-edu-container {
-    grid-area: education;
+    border-radius: 0.5rem;
+    box-shadow: -0.1rem 0.2rem 0.4rem rgba($color-grey-dark-1, 0.5);
+    background-color: $white-color;
+    padding: 1rem;
   }
 }
 
+.btn-add {
+  // position: absolute;
+  // right: 4rem;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1rem;
+  padding: 0.1rem 0.5rem;
+  background-image: linear-gradient(
+    to right,
+    $primary-color,
+    $primary-color-dark
+  );
+  color: $white-color;
+  transition: background-image 0.4s linear;
+
+  &:hover {
+    // opacity: 0.6;
+    background-image: linear-gradient(
+      to right,
+      $primary-color,
+      $primary-color-light
+    );
+  }
+}
+
+.btn-delete-exp-edu {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  // justify-content: end;
+}
+
 .btn-delete-profile {
-  grid-area: delete;
+  // grid-area: delete;
+  width: max-content;
+  text-align: center;
+  display: flex;
+  margin-top: 4rem;
+  // align-self: center;
   // grid-column: 2 / 3;
   // grid-row: 6 /7;
 }
 
-/* Mobile Styles */
-@media (max-width: 700px) {
-  .dash-buttons a {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.2rem;
-  }
-}
+// /* Mobile Styles */
+// @media (max-width: 700px) {
+//   .dash-buttons a {
+//     display: block;
+//     width: 100%;
+//     margin-bottom: 0.2rem;
+//   }
+// }
 
 // &-top img {
 //   width: 230px;

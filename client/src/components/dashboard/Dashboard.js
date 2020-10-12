@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile, deleteAccount } from "../../actions/profile";
 import Spinner from "../layout/Spinner";
-import DashboardCard from "../dashboard/DashboardCard";
+import DashboardCard from "./DashboardCard";
 import DashboardActions from "./DashboardActions";
 import Experience from "./Experience";
 import Education from "./Education";
@@ -35,38 +35,47 @@ const Dashboard = ({
 
       {profile !== null ? (
         <>
-          {/* CARD */}
-          <div className="dashboard-card">
-            <DashboardCard profile={profile} />
-            <div className="dashboard-skills .bg-grey-light">
-              <h2 className="text-primary font2-reg">Skill Set</h2>
-              <div className="skills-list-profile">
-                {profile.skills.map((skill, index) => (
-                  <div key={index} className="skill skill-profile">
-                    {skill}
-                  </div>
-                ))}
+          <div className="dashboard-main-container">
+            {/* CARD */}
+            <div className="dashboard-aside-container">
+              <DashboardCard profile={profile} className="dashboard-card" />
+
+              <div className="dashboard-skills .bg-grey-light">
+                <h2 className="text-primary font2-reg">Skill Set</h2>
+                <div className="dashboard-skills-list">
+                  {profile.skills.map((skill, index) => (
+                    <div key={index} className="dashboard-eachSkill">
+                      {skill}
+                    </div>
+                  ))}
+                </div>
               </div>
+
+
+              
+            </div>
+
+            <div className="dashboard-edu-and-exp-container">
+              {/* EXPERIENCE */}
+              <Experience experience={profile.experience} />
+              {/* EDUCATION */}
+              <Education education={profile.education} />
+              <button
+            className="btn btn-danger btn-delete-profile"
+            onClick={() => deleteAccount()}
+          >
+            Delete My Account
+          </button>
             </div>
           </div>
 
-          {/* EXPERIENCE */}
-          <div className="dashboard-exp-container">
-            <Experience experience={profile.experience} />
-          </div>
-
-          {/* EDUCATION */}
-          <div className="dashboard-edu-container">
-            <Education education={profile.education} />
-          </div>
-
           {/* FOOTER */}
-          <button
+          {/* <button
             className="btn btn-danger btn-delete-profile"
             onClick={() => deleteAccount()}
           >
             <i className="fas fa-user-minus"></i> Delete My Account
-          </button>
+          </button> */}
         </>
       ) : (
         <Fragment>
@@ -98,3 +107,17 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(
   Dashboard
 );
+
+{
+  /* <div className="dashboard-skills .bg-grey-light">
+              <h2 className="text-primary font2-reg">Skill Set</h2>
+             
+              <div className="skills-list-profile">
+                {profile.skills.map((skill, index) => (
+                  <div key={index} className="skill skill-profile">
+                    {skill}
+                  </div>
+                ))}
+              </div>
+            </div> */
+}

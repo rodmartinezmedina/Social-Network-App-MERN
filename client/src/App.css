@@ -346,17 +346,6 @@ img {
   .btn-dark {
     background-image: linear-gradient(to right bottom, #333, #777);
     color: #fff; }
-  .btn-add {
-    border-radius: 50%;
-    width: 1rem;
-    height: 1rem;
-    font-size: 1rem;
-    padding: 0.1rem 0.5rem;
-    background-image: linear-gradient(to right, #28559a, #142a5e);
-    color: #fff;
-    transition: background-image 0.4s linear; }
-    .btn-add:hover {
-      background-image: linear-gradient(to right, #28559a, #538de5); }
   .btn-danger {
     background-image: linear-gradient(to right, #aa2b38, #851621);
     color: #fff; }
@@ -850,7 +839,7 @@ button {
 
 .dashboard-page-container {
   display: grid;
-  grid-template-areas: "header header header header header" "actions actions actions actions actions" "card experience experience experience experience " "card education education education education" " delete . . . .";
+  grid-template-areas: "header" "actions" "main";
   grid-gap: 1rem; }
 
 .dashboard-header {
@@ -868,32 +857,100 @@ button {
 
 .dashboard-actions-list {
   grid-area: actions;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  align-content: center; }
-
-.dashboard-card {
-  grid-area: card; }
-
-.dashboard-skills {
   text-align: center; }
 
+.dashboard-main-container {
+  grid-area: main;
+  display: flex; }
+
+.dashboard-aside-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  text-align: center; }
+
+.dashboard-card-component {
+  border-radius: 0.5rem;
+  box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.5);
+  background-color: #fff;
+  margin-bottom: 1rem; }
+
+.dashboard-card-img {
+  text-align: center;
+  width: 230px; }
+
+.dashboard-skills {
+  text-align: center;
+  border-radius: 0.5rem;
+  box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.5);
+  background-color: #fff; }
+  .dashboard-skills-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0.5rem; }
+
+.dashboard-eachSkill {
+  font-size: 0.9rem;
+  font-family: "Roboto";
+  background: #fff;
+  color: #333;
+  border: #ccc solid 1px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem; }
+
+.dashboard-edu-and-exp-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-left: 2rem; }
+
 .dashboard-exp-container {
-  grid-area: experience; }
+  border-radius: 0.5rem;
+  box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.5);
+  background-color: #fff;
+  margin-bottom: 2rem;
+  padding: 1rem; }
+
+.dashboard-exp-list {
+  margin-bottom: 0.5rem; }
+  .dashboard-exp-list-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem; }
+  .dashboard-exp-list-bottom {
+    display: flex;
+    flex-direction: column; }
 
 .dashboard-edu-container {
-  grid-area: education; }
+  border-radius: 0.5rem;
+  box-shadow: -0.1rem 0.2rem 0.4rem rgba(51, 51, 51, 0.5);
+  background-color: #fff;
+  padding: 1rem; }
+
+.btn-add {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1rem;
+  padding: 0.1rem 0.5rem;
+  background-image: linear-gradient(to right, #28559a, #142a5e);
+  color: #fff;
+  transition: background-image 0.4s linear; }
+  .btn-add:hover {
+    background-image: linear-gradient(to right, #28559a, #538de5); }
+
+.btn-delete-exp-edu {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem; }
 
 .btn-delete-profile {
-  grid-area: delete; }
-
-/* Mobile Styles */
-@media (max-width: 700px) {
-  .dash-buttons a {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.2rem; } }
+  width: max-content;
+  text-align: center;
+  display: flex;
+  margin-top: 4rem; }
 
 .edit-profile-page-container {
   display: flex;

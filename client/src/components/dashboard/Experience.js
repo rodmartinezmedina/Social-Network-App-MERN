@@ -6,23 +6,31 @@ import { connect } from "react-redux";
 import { deleteExperience } from "../../actions/profile";
 
 const Experience = ({ experience, deleteExperience }) => {
+
   const experiences = experience.map((exp) => (
-    <div key={exp._id}>
-      <h3 className="text-dark">{exp.company}</h3>
-      <h3 className="hide-sm">{exp.title}</h3>
+    <div key={exp._id} className="dashboard-exp-list">
+      <div className="dashboard-exp-list-top">    
+      <h3 className="text-dark">Company: {exp.company}</h3>
       <p>
         <Moment format="DD/MM/YYYY">{exp.from}</Moment> -{" "}
         {!exp.to ? "Now" : <Moment format="DD/MM/YYYY">{exp.to}</Moment>}
       </p>
+     
+      </div>
+      
+     <div className="dashboard-exp-list-bottom">
       <p>
         <strong>Position: </strong> {exp.title}
       </p>
       <p>
         <strong>Description: </strong> {exp.description}
       </p>
+     </div>
+     
+     
       <button
         onClick={() => deleteExperience(exp._id)}
-        className="btn btn-danger"
+        className="btn btn-danger btn-delete-exp-edu"
       >
         Delete
       </button>
@@ -30,7 +38,7 @@ const Experience = ({ experience, deleteExperience }) => {
   ));
 
   return (
-    <div className="bg-white">
+    <div className="dashboard-exp-container">
       <h2 className="my2 font2-bold">
         Experience{" "}
         <span>

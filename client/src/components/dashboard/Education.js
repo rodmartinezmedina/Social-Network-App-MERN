@@ -7,7 +7,7 @@ import { deleteEducation } from "../../actions/profile";
 
 const Education = ({ education, deleteEducation }) => {
   const educations = education.map((edu) => (
-    <div key={edu._id}>
+    <div key={edu._id}  className="dashboard-edu-list">
       <h3 className="text-dark">{edu.school}</h3>
       <h3 className="hide-sm">{edu.degree}</h3>
 
@@ -22,7 +22,7 @@ const Education = ({ education, deleteEducation }) => {
 
       <button
         onClick={() => deleteEducation(edu._id)}
-        className="btn btn-danger"
+        className="btn btn-danger btn-delete-exp-edu"
       >
         Delete
       </button>
@@ -30,7 +30,7 @@ const Education = ({ education, deleteEducation }) => {
   ));
 
   return (
-    <div className="bg-white">
+    <div className="dashboard-edu-container">
       <h2 className="my2 font2-bold">
         Education
         <span>

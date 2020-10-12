@@ -63,37 +63,6 @@
     color: $white-color;
   }
 
-  &-add {
-    border-radius: 50%;
-    width: 1rem;
-    height: 1rem;
-    font-size: 1rem;
-    padding: 0.1rem 0.5rem;
-    background-image: linear-gradient(
-      to right,
-      $primary-color,
-      $primary-color-dark
-    );
-    color: $white-color;
-    transition: background-image 0.4s linear;
-
-    &:hover {
-      // opacity: 0.6;
-      background-image: linear-gradient(
-        to right,
-        $primary-color,
-        $primary-color-light
-      );
-    }
-
-    // padding-right: ;
-    // text-align: center;
-    // align-items: center;
-    // justify-content: center;
-    // align-self: center;
-    // padding: 0.5rem;
-  }
-
   &-danger {
     background-image: linear-gradient(
       to right,
