@@ -289,7 +289,15 @@
 
 @media (max-width: 750px) {
   .dashboard {
+    &-page-container {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+    }
+
     &-main-container {
+      width: 100%;
       display: flex;
       flex-direction: column;
       margin-left: auto;
@@ -298,7 +306,7 @@
 
     // ASIDE CONTAINER
     &-aside-container {
-      width: 95%;
+      width: 100%;
       text-align: center;
       margin-left: auto;
       margin-right: auto;
@@ -313,7 +321,7 @@
     &-edu-and-exp-container {
       display: flex;
       flex-direction: column;
-      width: 95%;
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
     }

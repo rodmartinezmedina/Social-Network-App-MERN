@@ -1023,13 +1023,19 @@ button {
         flex-direction: column; } }
 
 @media (max-width: 750px) {
+  .dashboard-page-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center; }
   .dashboard-main-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto; }
   .dashboard-aside-container {
-    width: 95%;
+    width: 100%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -1037,7 +1043,7 @@ button {
   .dashboard-edu-and-exp-container {
     display: flex;
     flex-direction: column;
-    width: 95%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto; } }
 

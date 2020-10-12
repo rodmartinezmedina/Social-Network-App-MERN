@@ -223,6 +223,11 @@ export const addEducation = (formData, history) => async (dispatch) => {
 
 //Delete experience
 export const deleteExperience = (id) => async (dispatch) => {
+  if (
+    window.confirm(
+      "Are you sure you want to DELETE THIS EXPERIENCE? "
+    )
+  ) {
   try {
     const res = await axios.delete(`/api/profile/experience/${id}`);
 
@@ -237,10 +242,16 @@ export const deleteExperience = (id) => async (dispatch) => {
       payload: { msg: err.response.statusText, status: err.response.status },
     });
   }
+}
 };
 
 //Delete Education
 export const deleteEducation = (id) => async (dispatch) => {
+  if (
+    window.confirm(
+      "Are you sure you want to DELETE THIS EDUCATION? "
+    )
+  ) {
   try {
     const res = await axios.delete(`/api/profile/education/${id}`);
 
@@ -254,7 +265,7 @@ export const deleteEducation = (id) => async (dispatch) => {
       type: PROFILE_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status },
     });
-  }
+  }}
 };
 
 //Delete account & profile
