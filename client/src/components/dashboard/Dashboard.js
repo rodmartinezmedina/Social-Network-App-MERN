@@ -39,7 +39,6 @@ const Dashboard = ({
             {/* CARD */}
             <div className="dashboard-aside-container">
               <DashboardCard profile={profile} className="dashboard-card" />
-
               <div className="dashboard-skills .bg-grey-light">
                 <h2 className="text-primary font2-reg">Skill Set</h2>
                 <div className="dashboard-skills-list">
@@ -50,9 +49,6 @@ const Dashboard = ({
                   ))}
                 </div>
               </div>
-
-
-              
             </div>
 
             <div className="dashboard-edu-and-exp-container">
@@ -61,11 +57,11 @@ const Dashboard = ({
               {/* EDUCATION */}
               <Education education={profile.education} />
               <button
-            className="btn btn-danger btn-delete-profile"
-            onClick={() => deleteAccount()}
-          >
-            Delete My Account
-          </button>
+                className="btn btn-danger btn-delete-profile"
+                onClick={() => deleteAccount()}
+              >
+                Delete My Account
+              </button>
             </div>
           </div>
 

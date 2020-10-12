@@ -861,7 +861,8 @@ button {
 
 .dashboard-main-container {
   grid-area: main;
-  display: flex; }
+  display: flex;
+  flex-direction: row; }
 
 .dashboard-aside-container {
   display: flex;
@@ -1024,7 +1025,50 @@ button {
 @media (max-width: 750px) {
   .dashboard-main-container {
     display: flex;
-    flex-direction: column; } }
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto; }
+  .dashboard-aside-container {
+    width: 95%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem; }
+  .dashboard-edu-and-exp-container {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto; } }
+
+@media (max-width: 450px) {
+  .dashboard-page-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center; }
+  .dashboard-actions-list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto; }
+  .dashboard-aside-container {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto; }
+  .dashboard-edu-and-exp-container {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto; }
+  .dashboard-edu-list {
+    text-align: center;
+    margin-bottom: 2.5rem; }
+    .dashboard-edu-list-top {
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-bottom: 0.5rem; } }
 
 .edit-profile-page-container {
   display: flex;

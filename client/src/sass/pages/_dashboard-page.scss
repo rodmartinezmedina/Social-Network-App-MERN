@@ -46,6 +46,7 @@
   &-main-container {
     grid-area: main;
     display: flex;
+    flex-direction: row;
     // grid-area: "card experience" "card education";
   }
 
@@ -291,36 +292,77 @@
     &-main-container {
       display: flex;
       flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    // ASIDE CONTAINER
+    &-aside-container {
+      width: 95%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+    }
+    // CARD CONTAINER
+    &-skills {
+      &-list {
+      }
+    }
+
+    &-edu-and-exp-container {
+      display: flex;
+      flex-direction: column;
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }
 
-// @media (max-width: 700px) {
-//   .dash-buttons a {
-//     display: block;
-//     width: 100%;
-//     margin-bottom: 0.2rem;
-//   }
-// }
+@media (max-width: 450px) {
+  .dashboard {
+    &-page-container {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+    }
 
-// &-top img {
-//   width: 230px;
-// }
+    &-actions-list {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-// &-top .icons {
-//   display: flex;
-//   width: 100%;
-//   padding: 1.5rem 2rem 2rem 2rem;
-//   align-items: center;
-//   justify-content: center;
-// }
+    &-aside-container {
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-// &-top .icons a {
-//   color: $white-color;
-//   margin: 0 0.3rem;
-// }
+    &-edu-and-exp-container {
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-// &-top .icons a:hover {
-//   color: $primary-color-lighter;
-//   // color: $secondary-color;
-// }
+    &-edu-list {
+      text-align: center;
+      margin-bottom: 2.5rem;
+
+      &-top {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 0.5rem;
+        &-inst {
+          // max-width: 50%;
+          // text-align: center;
+        }
+      }
+    }
+  }
+}
