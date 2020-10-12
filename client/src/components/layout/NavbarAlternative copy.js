@@ -29,14 +29,14 @@ const NavbarAlternative = ({
   const [menuActive, setMenuState] = useState(false);
 
   const authLinks = (
-    <ul class="nav no-search">
-      <li class="nav-item">
+    <ul>
+      <li>
         <Link to="/profiles">Network Users</Link>
       </li>
-      <li class="nav-item">
+      <li>
         <Link to="/posts">Posts</Link>
       </li>
-      <li class="nav-item">
+      <li>
         <Link to="/dashboard">
           <i className="fas fa-user"></i>{" "}
           <span className="hide-sm">
@@ -45,30 +45,26 @@ const NavbarAlternative = ({
           {/* <span className="hide-sm">{user ? user.name : "Dashboard"}</span> */}
         </Link>
       </li>
-      <li class="nav-item">
+      <li>
         <a onClick={logout} href="#!">
           <i className="fas fa-sign-out-alt"></i>
           <span className="hide-sm">Logout</span>
         </a>
       </li>
-      <i class="fas fa-search" id="search-icon"></i>
-      <input class="search-input" type="text" placeholder="Search.." />
     </ul>
   );
 
   const guestLinks = (
-    <ul class="nav no-search">
-      <li class="nav-item">
+    <ul>
+      <li>
         <Link to="/profiles">Network Users</Link>
       </li>
-      <li class="nav-item">
+      <li>
         <Link to="/register">Register</Link>
       </li>
-      <li class="nav-item">
+      <li>
         <Link to="/login">Login</Link>
       </li>
-      <i class="fas fa-search" id="search-icon"></i>
-      <input class="search-input" type="text" placeholder="Search.." />
     </ul>
   );
 
@@ -82,12 +78,10 @@ const NavbarAlternative = ({
             menuActive ? "is-active bg-white" : "mobile-nav color-green"
           }`}
         >
-          <h1>
-            <Link to="/" id="nav-logo">
-              <i className="fas fa-code-branch"></i> TechNetwork
-            </Link>
-          </h1>
-
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Bluestar_%28bus_company%29_logo.svg/1280px-Bluestar_%28bus_company%29_logo.svg.png"
+            alt="Company Logo"
+          />
           <div
             class="menu-toggle"
             id="mobile-menu"
@@ -97,10 +91,25 @@ const NavbarAlternative = ({
             <span class="bar"></span>
             <span class="bar"></span>
           </div>
-
-          {!loading && (
-            <Fragment>{isAuthenticated ? authLinks : guestLinks} </Fragment>
-          )}
+          <ul class="nav no-search">
+            <li class="nav-item">
+              <a href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#">Work</a>
+            </li>
+            <li class="nav-item">
+              <a href="#">Careers</a>
+            </li>
+            <li class="nav-item">
+              <a href="#">Contact Us</a>
+            </li>
+            <i class="fas fa-search" id="search-icon"></i>
+            <input class="search-input" type="text" placeholder="Search.." />
+          </ul>
         </nav>
       </div>
     </div>
@@ -117,3 +126,42 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { logout })(NavbarAlternative);
+
+// <div class="page-wrapper">
+// <div className="nav-alt-wrapper">
+//   <nav
+//     className={`navbar-alt bg-dark ${
+//       menuActive ? "is-active bg-dark" : "mobile-nav color-green"
+//     }`}
+//   >
+//     <Link to="/" id="nav-alt-logo">
+//       TechNetwork
+//     </Link>
+
+//     <div
+//       class="menu-toggle"
+//       id="mobile-menu"
+//       onClick={() => setMenuState(!menuActive)}
+//     >
+//       <span class="bar"></span>
+//       <span class="bar"></span>
+//       <span class="bar"></span>
+//     </div>
+
+//     <ul class="nav-alt no-search">
+//       <li class="nav-alt-item">
+//         <Link href="#">Home</Link>
+//       </li>
+//       <li class="nav-alt-item">
+//         <Link href="#">About</Link>
+//       </li>
+//       <i class="fas fa-search" id="search-icon"></i>
+//       <input class="search-input" type="text" placeholder="Search.." />
+//     </ul>
+
+//     {/* {!loading && (
+//     <Fragment>{isAuthenticated ? authLinks : guestLinks} </Fragment>
+//   )} */}
+//   </nav>
+// </div>
+// </div>
