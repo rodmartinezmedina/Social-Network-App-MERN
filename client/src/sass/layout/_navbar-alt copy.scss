@@ -136,23 +136,25 @@ input {
 }
 
 /* MOBILE MENU & ANIMATION */
-.menu-toggle .bar {
-  width: 25px;
-  height: 3px;
-  background-color: $primary-color-lighter;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    background-color: $white-color;
-  }
-}
-
 .menu-toggle {
   justify-self: end;
   margin-right: 25px;
   display: none;
+  &-:hover {
+    cursor: pointer;
+  }
+  > span {
+    width: 25px;
+    height: 3px;
+    background-color: $primary-color-lighter;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: $white-color;
+    }
+  }
 }
 
 .menu-toggle:hover {

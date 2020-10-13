@@ -29,7 +29,7 @@ const NavbarAlternative = ({
   const [menuActive, setMenuState] = useState(false);
 
   const authLinks = (
-    <ul class="nav no-search">
+    <ul clsass="nav no-search">
       <li class="nav-item">
         <Link to="/profiles">Network Users</Link>
       </li>
@@ -46,10 +46,10 @@ const NavbarAlternative = ({
         </Link>
       </li>
       <li class="nav-item">
-        <a onClick={logout} href="#!">
+        <Link onClick={logout} href="#!">
           <i className="fas fa-sign-out-alt"></i>
           <span className="hide-sm">Logout</span>
-        </a>
+        </Link>
       </li>
       <i class="fas fa-search" id="search-icon"></i>
       <input class="search-input" type="text" placeholder="Search.." />
@@ -78,8 +78,8 @@ const NavbarAlternative = ({
         <div class="grad-bar"></div>
 
         <nav
-          className={`navbar  ${
-            menuActive ? "is-active bg-white" : "mobile-nav color-green"
+          className={`navbar bg-dark ${
+            menuActive ? "is-active" : "mobile-nav"
           }`}
         >
           <h1>
