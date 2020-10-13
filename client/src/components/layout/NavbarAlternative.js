@@ -27,16 +27,17 @@ const NavbarAlternative = ({
   };
 
   const [menuActive, setMenuState] = useState(false);
+  const [searchInputActive, setSearchInputState] = useState(false);
 
   const authLinks = (
-    <ul clsass="nav no-search">
-      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
+    <ul className="nav no-search">
+      <li className="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link to="/profiles">Network Users</Link>
       </li>
-      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
+      <li className="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link to="/posts">Posts</Link>
       </li>
-      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
+      <li className="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link to="/dashboard">
           <i className="fas fa-user"></i>{" "}
           <span className="hide-sm">
@@ -45,61 +46,77 @@ const NavbarAlternative = ({
           {/* <span className="hide-sm">{user ? user.name : "Dashboard"}</span> */}
         </Link>
       </li>
-      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
+      <li className="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link onClick={logout} href="#!">
           <i className="fas fa-sign-out-alt"></i>
           <span className="hide-sm">Logout</span>
         </Link>
       </li>
-      <i class="fas fa-search" id="search-icon"></i>
-      <input class="search-input" type="text" placeholder="Search.." />
+      <i
+        className="fas fa-search"
+        id="search-icon"
+        onClick={() => setSearchInputState(!searchInputActive)}
+      ></i>
+      <input className="search-input" type="text" placeholder="Search.." />
     </ul>
   );
 
   const guestLinks = (
-    <ul class="nav no-search">
-      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
+    <ul className="nav no-search">
+      <li className="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link to="/profiles">Network Users</Link>
       </li>
-      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
+      <li className="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link to="/register">Register</Link>
       </li>
-      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
+      <li className="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link to="/login">Login</Link>
       </li>
-      <i class="fas fa-search" id="search-icon"></i>
-      <input class="search-input" type="text" placeholder="Search.." />
+      <i
+        className="fas fa-search"
+        id="search-icon"
+        onClick={() => setSearchInputState(!searchInputActive)}
+      ></i>
+      {/* <input className="search-input" type="text" placeholder="Search.." /> */}
+      <input
+        // className={searchInputActive ? "search" : "no-search"}
+        className={` nav-input ${
+          searchInputActive ? "search-active" : "search-input"
+        }`}
+        type="text"
+        placeholder="Search Users..."
+      />
     </ul>
   );
 
   return (
-    <div class="page-wrapper">
+    <div className="page-wrapper">
       <div className="nav-wrapper">
-        <div class="grad-bar"></div>
+        <div className="grad-bar"></div>
 
         <nav
           className={`navbar bg-dark ${
             menuActive ? "is-active" : "mobile-nav"
-          }`}
+          } ${searchInputActive ? "search" : "no-search"}`}
         >
           <h1>
             <Link
               to="/"
               id="nav-logo"
-              onClick={() => setMenuState(!menuActive)}
+              // onClick={() => setMenuState(!menuActive)}
             >
               <i className="fas fa-code-branch"></i> TechNetwork
             </Link>
           </h1>
 
           <div
-            class="menu-toggle"
+            className="menu-toggle"
             id="mobile-menu"
             onClick={() => setMenuState(!menuActive)}
           >
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
           </div>
 
           {!loading && (

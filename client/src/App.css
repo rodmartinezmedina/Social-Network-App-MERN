@@ -441,22 +441,30 @@ button {
   top: 0;
   background-color: #fff; }
 
-/* NAVIGATION */
+.grad-bar {
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(-45deg, #142a5e, #28559a, #538de5, #63bce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradbar 10s ease infinite;
+  -moz-animation: gradbar 10s ease infinite;
+  animation: gradbar 10s ease infinite; }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.7rem 2rem;
   position: fixed;
-  z-index: 1;
+  height: 60px;
   width: 100%;
-  top: 0;
-  border-bottom: solid 1px #28559a;
-  opacity: 0.9;
+  z-index: 1;
+  overflow: hidden;
+  border-bottom: solid 2px #538de5;
   color: #538de5;
-  background-color: #070c34;
+  opacity: 0.9;
   font-family: "Roboto";
-  overflow: hidden; }
+  background-color: #242424; }
   .navbar ul {
     list-style: none;
     display: flex; }
@@ -480,9 +488,12 @@ button {
 
 /* SEARCH FUNCTION */
 #search-icon {
+  color: #63bce5;
   font-size: 0.9rem;
+  padding-top: 0.2rem;
   margin-top: 3px;
-  margin-left: 15px;
+  margin-left: 1rem;
+  margin-right: 1.6rem;
   transition: color 0.3s ease-out; }
 
 #search-icon:hover {
@@ -490,9 +501,6 @@ button {
   cursor: pointer; }
 
 .search {
-  transform: translate(-35%);
-  -webkit-transform: translate(-35%);
-  transition: transform 0.7s ease-in-out;
   color: #63bce5; }
 
 .no-search {
@@ -501,34 +509,27 @@ button {
 
 .search-input {
   position: absolute;
-  top: -4px;
-  right: -125px;
   opacity: 0;
   z-index: -1;
-  transition: opacity 0.6s ease; }
+  transition: opacity 0.6s ease;
+  transition: transform 0.7s ease-in-out; }
 
 .search-active {
+  transform: translate(-15%);
+  -webkit-transform: translate(-15%);
+  transition: transform 0.7s ease-in-out;
+  margin-left: 1rem;
+  margin-right: -3rem;
   opacity: 1;
-  z-index: 0; }
+  z-index: 7; }
 
-input {
+.nav-input {
   border: 0;
-  border-left: 1px solid #ccc;
   border-radius: 0;
   /* FOR SAFARI */
   outline: 0;
-  padding: 5px; }
-
-.grad-bar {
-  width: 100%;
-  height: 8px;
-  background: linear-gradient(-45deg, #142a5e, #28559a, #538de5, #63bce5);
-  background-size: 400% 400%;
-  -webkit-animation: gradbar 15s ease infinite;
-  -moz-animation: gradbar 15s ease infinite;
-  animation: gradbar 15s ease infinite; }
-  .grad-bar-sm {
-    height: 4px; }
+  padding: 0.3rem;
+  margin-left: 1rem; }
 
 /* MOBILE MENU & ANIMATION */
 .menu-toggle .bar {
@@ -564,31 +565,6 @@ input {
   -o-transform: translateY(-8px) rotate(-45deg);
   transform: translateY(-8px) rotate(-45deg); }
 
-/* KEYFRAME ANIMATIONS */
-@-webkit-keyframes gradbar {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-
-@-moz-keyframes gradbar {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-
-@keyframes gradbar {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-
 /* Media Queries */
 /* Mobile Devices - Phones/Tablets */
 @media only screen and (max-width: 720px) {
@@ -603,7 +579,7 @@ input {
     justify-content: center;
     top: 55px;
     left: 100%;
-    background-color: #070c34;
+    background-color: #242424;
     width: 100%;
     height: 100vh;
     transform: translate(-101%);
@@ -637,10 +613,35 @@ input {
   .search-input {
     display: none; } }
 
+/* KEYFRAME ANIMATIONS */
+@-webkit-keyframes gradbar {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@-moz-keyframes gradbar {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@keyframes gradbar {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
 /* Landing Page */
 .landing {
   position: relative;
-  background: url("./img/showcase.jpg") no-repeat center/cover;
+  background-color: #333;
   height: 100vh;
   z-index: -1;
   color: #fff;
