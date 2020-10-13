@@ -30,13 +30,13 @@ const NavbarAlternative = ({
 
   const authLinks = (
     <ul clsass="nav no-search">
-      <li class="nav-item">
+      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link to="/profiles">Network Users</Link>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link to="/posts">Posts</Link>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link to="/dashboard">
           <i className="fas fa-user"></i>{" "}
           <span className="hide-sm">
@@ -45,7 +45,7 @@ const NavbarAlternative = ({
           {/* <span className="hide-sm">{user ? user.name : "Dashboard"}</span> */}
         </Link>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link onClick={logout} href="#!">
           <i className="fas fa-sign-out-alt"></i>
           <span className="hide-sm">Logout</span>
@@ -58,13 +58,13 @@ const NavbarAlternative = ({
 
   const guestLinks = (
     <ul class="nav no-search">
-      <li class="nav-item">
+      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link to="/profiles">Network Users</Link>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link to="/register">Register</Link>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" onClick={() => setMenuState(!menuActive)}>
         <Link to="/login">Login</Link>
       </li>
       <i class="fas fa-search" id="search-icon"></i>
@@ -83,7 +83,11 @@ const NavbarAlternative = ({
           }`}
         >
           <h1>
-            <Link to="/" id="nav-logo">
+            <Link
+              to="/"
+              id="nav-logo"
+              onClick={() => setMenuState(!menuActive)}
+            >
               <i className="fas fa-code-branch"></i> TechNetwork
             </Link>
           </h1>
