@@ -97,14 +97,15 @@ const NavbarAlternative = ({
         <nav
           className={`navbar bg-dark ${
             menuActive ? "is-active" : "mobile-nav"
-          } ${searchInputActive ? "search" : "no-search"}`}
+          } `}
         >
+          {/* <nav
+            className={`navbar bg-dark ${
+              menuActive ? "is-active" : "mobile-nav"
+            } ${searchInputActive ? "search" : "no-search"}`}
+          ></nav> */}
           <h1>
-            <Link
-              to="/"
-              id="nav-logo"
-              // onClick={() => setMenuState(!menuActive)}
-            >
+            <Link to="/" id="nav-logo">
               <i className="fas fa-code-branch"></i> TechNetwork
             </Link>
           </h1>

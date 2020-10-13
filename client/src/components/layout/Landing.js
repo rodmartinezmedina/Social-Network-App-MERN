@@ -10,7 +10,8 @@ const Landing = ({ isAuthenticated }) => {
 
   return (
     <div className="landing">
-      <h1 className="x-large">TechNetwork</h1>
+      <h1 className="x-large" id="nav-logo"><i className="fas fa-code-branch"></i> TechNetwork</h1>
+      
       <h2 className="medium">
         Developers, Data Scientists, Engineers and more...
       </h2>

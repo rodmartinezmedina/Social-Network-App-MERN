@@ -412,20 +412,6 @@ button {
 .form .social-input i.fa-linkedin {
   color: #0077b5; }
 
-/* Navbar */
-@media (max-width: 700px) {
-  /* Navbar */
-  .navbar {
-    display: block;
-    text-align: center; }
-  .navbar ul {
-    text-align: center;
-    justify-content: center; }
-  .navbar h1 {
-    margin-bottom: 1rem; }
-  .navbar .welcome {
-    display: none; } }
-
 * {
   margin: 0;
   padding: 0;
@@ -525,7 +511,7 @@ button {
 
 .nav-input {
   border: 0;
-  border-radius: 0;
+  border-radius: 5px;
   /* FOR SAFARI */
   outline: 0;
   padding: 0.3rem;
@@ -568,9 +554,6 @@ button {
 /* Media Queries */
 /* Mobile Devices - Phones/Tablets */
 @media only screen and (max-width: 720px) {
-  .features {
-    flex-direction: column;
-    padding: 50px; }
   /* MOBILE NAVIGATION */
   .navbar ul {
     display: flex;
@@ -598,16 +581,9 @@ button {
     cursor: pointer; }
   .mobile-nav {
     transform: translate(0%) !important; }
-  /* SECTIONS */
-  .headline {
-    height: 20vh; }
-  .feature-container p {
-    margin-bottom: 25px; }
-  .feature-container {
-    margin-top: 20px; }
-  .feature-container:nth-child(2) {
-    order: -1; }
   /* SEARCH DISABLED ON MOBILE */
+  .nav-input {
+    display: none; }
   #search-icon {
     display: none; }
   .search-input {

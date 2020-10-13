@@ -140,8 +140,7 @@
 
 .nav-input {
   border: 0;
-
-  border-radius: 0; /* FOR SAFARI */
+  border-radius: 5px; /* FOR SAFARI */
   outline: 0;
   padding: 0.3rem;
   margin-left: 1rem;
@@ -191,24 +190,16 @@
 /* Mobile Devices - Phones/Tablets */
 
 @media only screen and (max-width: 720px) {
-  .features {
-    flex-direction: column;
-    padding: 50px;
-  }
-
   /* MOBILE NAVIGATION */
-
   .navbar ul {
     display: flex;
     flex-direction: column;
     position: fixed;
     justify-content: center;
-    // top: 55px;
     top: 55px;
     left: 100%;
     background-color: $color-grey-darkest;
     width: 100%;
-    // height: calc(100vh - 155px);
     height: 100vh;
     transform: translate(-101%);
     text-align: center;
@@ -238,25 +229,17 @@
     transform: translate(0%) !important;
   }
 
-  /* SECTIONS */
-
-  .headline {
-    height: 20vh;
-  }
-
-  .feature-container p {
-    margin-bottom: 25px;
-  }
-
-  .feature-container {
-    margin-top: 20px;
-  }
-
-  .feature-container:nth-child(2) {
-    order: -1;
-  }
-
   /* SEARCH DISABLED ON MOBILE */
+
+  .nav-input {
+    display: none;
+    // justify-content: center;
+    // text-align: center;
+    // width: 50%;
+    // margin-left: auto;
+    // margin-right: auto;
+  }
+
   #search-icon {
     display: none;
   }
