@@ -589,6 +589,10 @@ button {
   .search-input {
     display: none; } }
 
+@media only screen and (max-width: 420px) {
+  #nav-logo {
+    font-size: 1.2rem; } }
+
 /* KEYFRAME ANIMATIONS */
 @-webkit-keyframes gradbar {
   0% {
@@ -617,6 +621,9 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #333;
   height: 100vh;
   z-index: -1;
@@ -625,11 +632,21 @@ button {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: -12rem;
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center; }
+
+@media only screen and (max-width: 450px) {
+  .landing #nav-logo {
+    font-size: 2rem; }
+  .landing h2 {
+    font-size: 1.2rem; }
+  .landing p {
+    font-size: 0.85rem; } }
 
 /* Posts Page */
 .posts-page-container {

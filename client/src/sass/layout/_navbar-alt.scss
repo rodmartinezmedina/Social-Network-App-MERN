@@ -249,6 +249,12 @@
   }
 }
 
+@media only screen and (max-width: 420px) {
+  #nav-logo {
+    font-size: 1.2rem;
+  }
+}
+
 /* KEYFRAME ANIMATIONS */
 @-webkit-keyframes gradbar {
   0% {
