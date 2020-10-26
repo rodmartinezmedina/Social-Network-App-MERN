@@ -4,7 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile } from "../../actions/profile";
-import { CLOUD_NAME } from "../../.env";
+
 
 const NAME_OF_UPLOAD_PRESET = "xdshqlct";
 const MY_CLOUD_NAME = process.env.CLOUD_NAME;
@@ -111,7 +111,7 @@ const CreateProfile = ({ createProfile, history }) => {
       <form
         className="form"
         onSubmit={(e) => onSubmit(e)}
-        // encType="multipart/form-data"
+      // encType="multipart/form-data"
       >
         <div className="form-group">
           <select name="status" value={status} onChange={(e) => onChange(e)}>
