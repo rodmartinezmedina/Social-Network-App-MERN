@@ -17,25 +17,25 @@ const Education = ({ education, deleteEducation }) => {
           {edu.to === null ? (
             " Now"
           ) : (
-            <Moment format="DD/MM/YYYY">{edu.to}</Moment>
-          )}
+              <Moment format="DD/MM/YYYY">{edu.to}</Moment>
+            )}
         </p>
       </div>
 
       <div className="dashboard-edu-list-bottom">
         <p>
-          <strong>Degree: </strong>
-          {edu.degree}
+          <strong>{edu.degree}</strong>
         </p>
 
         <p>
-          <strong>Description: </strong> {edu.description}
+          {edu.description}
         </p>
       </div>
 
       <button
         onClick={() => deleteEducation(edu._id)}
-        className="btn btn-danger btn-delete-exp-edu"
+        className="btn btn-danger-secondary btn-delete-exp-edu"
+        id='fuckingshit'
       >
         Delete
       </button>
@@ -44,11 +44,11 @@ const Education = ({ education, deleteEducation }) => {
 
   return (
     <div className="dashboard-edu-container">
-      <h2 className="my2 font2-bold">
+      <h2 className="edu-exp-card-title">
         Education
         <span>
           <Link to="/add-education" className="btn-add">
-            +
+            <strong>+</strong>
           </Link>
         </span>
       </h2>

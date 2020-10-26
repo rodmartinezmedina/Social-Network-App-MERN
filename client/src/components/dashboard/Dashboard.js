@@ -22,69 +22,69 @@ const Dashboard = ({
   return loading && profile === null ? (
     <Spinner />
   ) : (
-    <div className="dashboard-page-container">
-      {/* HEADER */}
-      <div className="dashboard-header">
-        <h1 className="large text-primary">Profile</h1>
-        <p className="lead">
-          <i className="fas fa-user"></i> Welcome {user && user.name}
-        </p>
-      </div>
-      {/* ACTIONS */}
-      <DashboardActions className="dashboard-actions-container" />
+      <div className="dashboard-page-container">
+        {/* HEADER */}
+        <div className="dashboard-header">
+          <h1 className="large text-primary">Profile</h1>
+          <p className="lead">
+            <i className="fas fa-user"></i> Welcome {user && user.name}
+          </p>
+        </div>
+        {/* ACTIONS */}
+        <DashboardActions className="dashboard-actions-container" />
 
-      {profile !== null ? (
-        <>
-          <div className="dashboard-main-container">
-            {/* CARD */}
-            <div className="dashboard-aside-container">
-              <DashboardCard profile={profile} className="dashboard-card" />
-              <div className="dashboard-skills .bg-grey-light">
-                <h2 className="text-primary font2-reg">Skill Set</h2>
-                <div className="dashboard-skills-list">
-                  {profile.skills.map((skill, index) => (
-                    <div key={index} className="dashboard-eachSkill">
-                      {skill}
-                    </div>
-                  ))}
+        {profile !== null ? (
+          <>
+            <div className="dashboard-main-container">
+              {/* CARD */}
+              <div className="dashboard-aside-container">
+                <DashboardCard profile={profile} className="dashboard-card" />
+                <div className="dashboard-skills .bg-grey-light">
+                  <h2 className="text-primary font2-reg">Skill Set</h2>
+                  <div className="dashboard-skills-list">
+                    {profile.skills.map((skill, index) => (
+                      <div key={index} className="dashboard-eachSkill">
+                        {skill}
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              </div>
+
+              <div className="dashboard-edu-and-exp-container">
+                {/* EXPERIENCE */}
+                <Experience experience={profile.experience} />
+                {/* EDUCATION */}
+                <Education education={profile.education} />
+                <button
+                  className="btn btn-danger-secondary btn-delete-profile"
+                  onClick={() => deleteAccount()}
+                >
+                  Delete My Account
+              </button>
               </div>
             </div>
 
-            <div className="dashboard-edu-and-exp-container">
-              {/* EXPERIENCE */}
-              <Experience experience={profile.experience} />
-              {/* EDUCATION */}
-              <Education education={profile.education} />
-              <button
-                className="btn btn-danger btn-delete-profile"
-                onClick={() => deleteAccount()}
-              >
-                Delete My Account
-              </button>
-            </div>
-          </div>
-
-          {/* FOOTER */}
-          {/* <button
+            {/* FOOTER */}
+            {/* <button
             className="btn btn-danger btn-delete-profile"
             onClick={() => deleteAccount()}
           >
             <i className="fas fa-user-minus"></i> Delete My Account
           </button> */}
-        </>
-      ) : (
-        <Fragment>
-          <p>
-            You have not filled up your profile yet, please add some information
+          </>
+        ) : (
+            <Fragment>
+              <p>
+                You have not filled up your profile yet, please add some information
           </p>
-          <Link to="/create-profile" className="btn btn-primary my-1">
-            Create Profile
+              <Link to="/create-profile" className="btn btn-primary my-1">
+                Create Profile
           </Link>
-        </Fragment>
-      )}
-    </div>
-  );
+            </Fragment>
+          )}
+      </div>
+    );
 };
 
 Dashboard.propTypes = {

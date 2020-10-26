@@ -81,6 +81,19 @@
     }
   }
 
+  &-danger-secondary {
+    background-color: transparent;
+    color: $danger-color;
+    border: 1px solid $danger-color !important;
+
+   
+    &:hover {
+      border: 2px solid $danger-color !important;
+      font-weight: 600;
+    }
+  }
+  
+
   &-success {
     background: $success-color;
     color: $white-color;
@@ -99,3 +112,21 @@
     }
   }
 }
+
+// #fuckingshit {
+// background-color: transparent;
+// color: $danger-color;
+// border: 2px solid #4CAF50;
+// border-width: 3px;
+// border: $danger-color;
+// outline-width: 1px;
+// outline-color: brown;
+
+// &:hover {
+//   color: blue;
+//   outline-width: 1px;
+//   outline-color: brown;
+//   border-color: violet;
+//   border-width: 8px; 
+// }
+// }

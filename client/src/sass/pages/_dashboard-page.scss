@@ -158,36 +158,72 @@
   }
 }
 
+
+//cards
+
+.edu-exp {
+  &-card {
+    &-title {
+
+      color:$primary-color-dark;
+      font-weight: 500;
+      font-size: 1.2rem;
+      margin-right: 2rem;
+
+      & > span {
+        margin-left: .5rem;
+      }
+    }
+
+  }
+}
+
+
+
 .btn-add {
-  // position: absolute;
-  // right: 4rem;
   border-radius: 50%;
   width: 1.5rem;
-  height: 1.5rem;
+  height: 1rem;
   font-size: 1rem;
-  padding: 0.1rem 0.5rem;
-  background-image: linear-gradient(
-    to right,
-    $primary-color,
-    $primary-color-dark
-  );
-  color: $white-color;
+  font-weight: 700;
+  padding: 0.07rem 0.5rem;
+  transition: 0.2s ease-in;
+  
+  // background-image: linear-gradient(
+  //   to right,
+  //   $primary-color,
+  //   $primary-color-dark
+  // );
+  // color: $white-color;
+  color: $primary-color;
+  border: solid $primary-color 1.7px;
   transition: background-image 0.4s linear;
 
+  &:active {
+    transform: translateY(-3px);
+    box-shadow: 0rem 0.3rem 0.9rem rgba($color-grey-dark-1, 0.8);
+  }
+
   &:hover {
-    // opacity: 0.6;
-    background-image: linear-gradient(
-      to right,
-      $primary-color,
-      $primary-color-light
-    );
+    // width: 2rem;
+    // height:2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.1rem 0.5rem;
+    border: solid 2.3px !important;
+    padding: 0.07rem 0.55rem;
+    // background-image: linear-gradient(
+    //   to right,
+    //   $primary-color,
+    //   $primary-color-light
+    // );
   }
 }
 
 .btn-delete-exp-edu {
   padding: 0.4rem 0.6rem;
   font-size: 0.8rem;
-  // justify-content: end;
+  border: 1px red;
 }
 
 .btn-delete-profile {
