@@ -10,7 +10,7 @@
 # testing
 /coverage
 /config/default.json
-
+/config/production.json
 
 # production
 /build
