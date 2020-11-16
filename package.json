@@ -9,10 +9,7 @@
     "build": "npm --prefix client run build",
     "start": "node server",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    
-  
-
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Rodrigo Martinez Medina",
   "license": "ISC",
