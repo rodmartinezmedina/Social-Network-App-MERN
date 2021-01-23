@@ -5,39 +5,39 @@
   margin: 0.3rem;
   background: $color-grey-dark-1;
   color: $white-color;
-}
 
-.badge-primary {
-  background: $primary-color;
-  color: $white-color;
-}
+  &-primary {
+    background: $primary-color;
+    color: $white-color;
+  }
 
-.badge-light {
-  background-color: $primary-color-light;
-  color: $color-grey-dark-1;
-}
+  &-light {
+    background-color: $primary-color-light;
+    color: $color-grey-dark-1;
+  }
 
-.badge-dark {
-  background: $dark-color;
-  color: $white-color;
-}
+  &-dark {
+    background: $dark-color;
+    color: $white-color;
+  }
 
-.badge-danger {
-  background: $danger-color;
-  color: $white-color;
-}
+  &-danger {
+    background: $danger-color;
+    color: $white-color;
+  }
 
-.badge-success {
-  background: $success-color;
-  color: $white-color;
-}
+  &-success {
+    background: $success-color;
+    color: $white-color;
+  }
 
-.badge-white {
-  background: $white-color;
-  color: $color-grey-dark-1;
-  border: $color-grey-light-4 solid 1px;
-}
+  &-white {
+    background: $white-color;
+    color: $color-grey-dark-1;
+    border: $color-grey-light-4 solid 1px;
+  }
 
-.badge-light {
-  border: $color-grey-light-4 solid 1px;
+  &-light {
+    border: $color-grey-light-4 solid 1px;
+  }
 }

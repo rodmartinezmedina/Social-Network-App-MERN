@@ -1,7 +1,7 @@
 /* Text Styles*/
 
 .font1 {
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   &-light {
     font-weight: 300;
   }
@@ -14,7 +14,7 @@
 }
 
 .font2 {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   &-reg {
     font-weight: 400;
   }
@@ -34,7 +34,6 @@
   line-height: 1.2;
   margin-bottom: 1rem;
 }
-
 .large {
   font-size: 3rem;
   line-height: 1.2;
@@ -52,20 +51,19 @@
   margin-bottom: 1rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.text-white {
-  color: $white-color;
-}
-
-.text-primary {
-  color: $primary-color;
-}
-
-.text-dark {
-  color: $primary-color-dark;
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-white {
+    color: $white-color;
+  }
+  &-primary {
+    color: $primary-color;
+  }
+  &-dark {
+    color: $primary-color-dark;
+  }
 }
 
 /* Mobile Styles */
@@ -74,11 +72,9 @@
   .x-large {
     font-size: 3rem;
   }
-
   .large {
     font-size: 2rem;
   }
-
   .lead {
     font-size: 1rem;
   }

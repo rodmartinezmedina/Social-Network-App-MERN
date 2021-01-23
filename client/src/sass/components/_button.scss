@@ -11,21 +11,6 @@
   transition: 0.2s ease-in;
   outline: none;
 
-  &:hover {
-    // opacity: 0.6;
-    // background-image: linear-gradient(
-    //   to right,
-    //   $primary-color,
-    //   $primary-color-light
-    // );
-    // transition: background-image 1s;
-  }
-
-  &:active {
-    transform: translateY(-3px);
-    box-shadow: 0rem 0.3rem 0.9rem rgba($color-grey-dark-1, 0.8);
-  }
-
   &-primary {
     background-image: linear-gradient(
       to right,
@@ -86,13 +71,16 @@
     color: $danger-color;
     border: 1px solid $danger-color !important;
 
-   
     &:hover {
-      border: 2px solid $danger-color !important;
-      font-weight: 600;
+      // opacity: 0.6;
+      background-image: linear-gradient(
+        to right,
+        $danger-color,
+        $danger-color-light
+      );
+      color: white;
     }
   }
-  
 
   &-success {
     background: $success-color;
@@ -113,20 +101,6 @@
   }
 }
 
-// #fuckingshit {
-// background-color: transparent;
-// color: $danger-color;
-// border: 2px solid #4CAF50;
-// border-width: 3px;
-// border: $danger-color;
-// outline-width: 1px;
-// outline-color: brown;
-
-// &:hover {
-//   color: blue;
-//   outline-width: 1px;
-//   outline-color: brown;
-//   border-color: violet;
-//   border-width: 8px; 
-// }
-// }
+button {
+  font: inherit;
+}

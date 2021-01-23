@@ -12,112 +12,112 @@
 /* Padding */
 .p {
   padding: 0.5rem;
+  &-1 {
+    padding: 1rem;
+  }
+  &-2 {
+    padding: 2rem;
+  }
+  &-3 {
+    padding: 3rem;
+  }
 }
-.p-1 {
-  padding: 1rem;
-}
-.p-2 {
-  padding: 2rem;
-}
-.p-3 {
-  padding: 3rem;
-}
+
 .py {
   padding: 0.5rem 0;
-}
-.py-1 {
-  padding: 1rem 0;
-}
-.py-2 {
-  padding: 2rem 0;
-}
-.py-3 {
-  padding: 3rem 0;
+  &-1 {
+    padding: 1rem 0;
+  }
+  &-2 {
+    padding: 2rem 0;
+  }
+  &-3 {
+    padding: 3rem 0;
+  }
 }
 
 /* Margin */
 .m {
   margin: 0.5rem;
+  &-1 {
+    margin: 1rem;
+  }
+  &-2 {
+    margin: 2rem;
+  }
+  &-3 {
+    margin: 3rem;
+  }
 }
-.m-1 {
-  margin: 1rem;
-}
-.m-2 {
-  margin: 2rem;
-}
-.m-3 {
-  margin: 3rem;
-}
+
 .my {
   margin: 0.5rem 0;
-}
-.my-1 {
-  margin: 1rem 0;
-}
-.my-2 {
-  margin: 2rem 0;
-}
-.my-3 {
-  margin: 3rem 0;
-}
-
-.bg-primary {
-  // background: $primary-color;
-  background-image: linear-gradient(
-    to right,
-    $primary-color-dark,
-    $primary-color,
-    $primary-color-dark
-  );
-  color: $white-color;
+  &-1 {
+    margin: 1rem 0;
+  }
+  &-2 {
+    margin: 2rem 0;
+  }
+  &-3 {
+    margin: 3rem 0;
+  }
 }
 
-.bg-grey-dark {
-  // background: $primary-color;
-  background-image: linear-gradient(
-    to right,
-    $color-grey-dark-1 $primary-color,
-    $color-grey-dark-1
-  );
-  color: $white-color;
-}
+.bg {
+  &-primary {
+    // background: $primary-color;
+    background-image: linear-gradient(
+      to right,
+      $primary-color-dark,
+      $primary-color,
+      $primary-color-dark
+    );
+    color: $white-color;
+  }
 
-.bg-grey-light {
-  background-image: linear-gradient(
-    to right,
-    $color-grey-light-1,
-    $color-grey-light-4
-  );
-}
+  &-grey-dark {
+    // background: $primary-color;
+    background-image: linear-gradient(
+      to right,
+      $color-grey-dark-1 $primary-color,
+      $color-grey-dark-1
+    );
+    color: $white-color;
+  }
 
-.bg-light {
-  background: $color-grey-light-1;
-  color: $color-grey-dark-1;
-}
+  &-grey-light {
+    background-image: linear-gradient(
+      to right,
+      $color-grey-light-1,
+      $color-grey-light-4
+    );
+  }
 
-.bg-dark {
-  background: $color-grey-darkest;
-  color: $white-color;
-}
+  &-light {
+    background: $color-grey-light-1;
+    color: $color-grey-dark-1;
+  }
 
-.bg-danger {
-  background: $danger-color;
-  color: $white-color;
-}
+  &-dark {
+    background: $color-grey-darkest;
+    color: $white-color;
+  }
 
-.bg-success {
-  background: $success-color;
-  color: $white-color;
-}
+  &-danger {
+    background: $danger-color;
+    color: $white-color;
+  }
 
-.bg-white {
-  background: $white-color;
-  color: $color-grey-dark-1;
-  border: $color-grey-light-4 solid 1px;
-}
+  &-success {
+    background: $success-color;
+    color: $white-color;
+  }
 
-.bg-light {
-  // border: $color-grey-light-4 solid 1px;
+  &-white {
+    background: $white-color;
+    color: $color-grey-dark-1;
+    border: $color-grey-light-4 solid 1px;
+  }
 }
 
 /* Global Styles */
@@ -149,18 +149,18 @@
   height: 100%;
 }
 
-.table th,
-.table td {
-  padding: 0.5rem;
-  text-align: left;
-}
-.table thead {
-}
+.table {
+  th,
+  td {
+    padding: 0.5rem;
+    text-align: left;
+  }
 
-.table th {
-  background: $white-color;
-  color: $primary-color;
-  border-radius: 0.5rem;
+  & th {
+    background: $white-color;
+    color: $primary-color;
+    border-radius: 0.5rem;
+  }
 }
 
 /* Mobile Styles */

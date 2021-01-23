@@ -1,58 +1,57 @@
 /* Forms */
 
-.form textarea {
-  font-family: "Roboto";
+.form {
+  & textarea {
+    font-family: 'Roboto';
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid $color-grey-light-4;
+  }
+
+  & .form-group {
+    margin: 1.2rem 0;
+  }
+
+  &.form-text {
+    display: block;
+    margin-top: 0.3rem;
+    color: #888;
+  }
+
+  & .social-input {
+    display: flex;
+  }
+
+  .form .social-input i {
+    padding: 0.5rem;
+    width: 4rem;
+
+    & i.fa-twitter {
+      color: $twitter-blue-color;
+    }
+    & i.fa-facebook {
+      color: $facebook-blue-color;
+    }
+    & i.fa-instagram {
+      color: $instagram-blue-color;
+    }
+    & i.fa-youtube {
+      color: $youtube-blue-color;
+    }
+    & i.fa-linkedin {
+      color: $linkedin-blue-color;
+    }
+  }
 }
 
-.form .form-group {
-  margin: 1.2rem 0;
-}
-
-.form .form-text {
-  display: block;
-  margin-top: 0.3rem;
-  color: #888;
-}
-
-.form input[type="text"],
-.form input[type="email"],
-.form input[type="password"],
-.form input[type="date"],
+.form input[type='text'],
+.form input[type='email'],
+.form input[type='password'],
+.form input[type='date'],
 .form select,
-.form textarea {
-  display: block;
-  width: 100%;
-  padding: 0.4rem;
-  font-size: 1.2rem;
-  border: 1px solid $color-grey-light-4;
-}
-
-.form input[type="submit"],
+.form input[type='submit'],
 button {
   font: inherit;
-}
-
-.form .social-input {
-  display: flex;
-}
-
-.form .social-input i {
-  padding: 0.5rem;
-  width: 4rem;
-}
-
-.form .social-input i.fa-twitter {
-  color: $twitter-blue-color;
-}
-.form .social-input i.fa-facebook {
-  color: $facebook-blue-color;
-}
-.form .social-input i.fa-instagram {
-  color: $instagram-blue-color;
-}
-.form .social-input i.fa-youtube {
-  color: $youtube-blue-color;
-}
-.form .social-input i.fa-linkedin {
-  color: $linkedin-blue-color;
 }

@@ -19,14 +19,14 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Spinner />
       ) : (
         <div className='profiles-page-container'>
-          <h1 className='large text-primary'>Network Users</h1>
+               <h1 className='large text-primary'>Network Users</h1>
 
           <p className='lead'>
             <i className='fab fa-connectdevelop'></i>
             Browse and connect with other users
           </p>
 
-          <div className='profiles'>
+              <div className='profiles'>
             {profiles.length > 0 ? (
               // profiles.map((profile) => (
               //   <ProfileItem key={profile._id} profile={profile} />

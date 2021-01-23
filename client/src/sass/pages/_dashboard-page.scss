@@ -2,9 +2,9 @@
   &-page-container {
     display: grid;
     grid-template-areas:
-      "header"
-      "actions"
-      "main";
+      'header'
+      'actions'
+      'main';
     // "delete";
     // grid-template-areas:
     //   "header header header header "
@@ -20,14 +20,14 @@
     grid-area: header;
 
     > h1 {
-      font-family: "Roboto";
+      font-family: 'Roboto';
       font-weight: 500;
       margin-bottom: 0;
       text-align: center;
     }
 
     > p {
-      font-family: "Roboto";
+      font-family: 'Roboto';
       font-weight: 400;
       color: $primary-color-light;
       text-align: center;
@@ -87,7 +87,7 @@
 
   &-eachSkill {
     font-size: 0.9rem;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     background: $white-color;
     color: $color-grey-dark-1;
     border: $color-grey-light-4 solid 1px;
@@ -158,27 +158,22 @@
   }
 }
 
-
 //cards
 
 .edu-exp {
   &-card {
     &-title {
-
-      color:$primary-color-dark;
+      color: $primary-color-dark;
       font-weight: 500;
       font-size: 1.2rem;
       margin-right: 2rem;
 
       & > span {
-        margin-left: .5rem;
+        margin-left: 0.5rem;
       }
     }
-
   }
 }
-
-
 
 .btn-add {
   border-radius: 50%;
@@ -188,7 +183,7 @@
   font-weight: 700;
   padding: 0.07rem 0.5rem;
   transition: 0.2s ease-in;
-  
+
   // background-image: linear-gradient(
   //   to right,
   //   $primary-color,
@@ -232,6 +227,9 @@
   text-align: center;
   display: flex;
   margin-top: 4rem;
+  &:hover {
+    background-color: red !important;
+  }
   // align-self: center;
   // grid-column: 2 / 3;
   // grid-row: 6 /7;
