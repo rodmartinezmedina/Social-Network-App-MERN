@@ -351,6 +351,13 @@ img {
     color: #fff; }
     .btn-danger:hover {
       background-image: linear-gradient(to right, #aa2b38, #f56c7a); }
+  .btn-danger-secondary {
+    background-color: transparent;
+    color: #aa2b38;
+    border: 1px solid #aa2b38 !important; }
+    .btn-danger-secondary:hover {
+      border: 2px solid #aa2b38 !important;
+      font-weight: 600; }
   .btn-success {
     background: #239c40;
     color: #fff; }
@@ -1122,21 +1129,39 @@ button {
     flex-direction: column;
     max-width: 65%; }
 
+.edu-exp-card-title {
+  color: #142a5e;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-right: 2rem; }
+  .edu-exp-card-title > span {
+    margin-left: .5rem; }
+
 .btn-add {
   border-radius: 50%;
   width: 1.5rem;
-  height: 1.5rem;
+  height: 1rem;
   font-size: 1rem;
-  padding: 0.1rem 0.5rem;
-  background-image: linear-gradient(to right, #28559a, #142a5e);
-  color: #fff;
+  font-weight: 700;
+  padding: 0.07rem 0.5rem;
+  transition: 0.2s ease-in;
+  color: #28559a;
+  border: solid #28559a 1.7px;
   transition: background-image 0.4s linear; }
+  .btn-add:active {
+    transform: translateY(-3px);
+    box-shadow: 0rem 0.3rem 0.9rem rgba(51, 51, 51, 0.8); }
   .btn-add:hover {
-    background-image: linear-gradient(to right, #28559a, #538de5); }
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.1rem 0.5rem;
+    border: solid 2.3px !important;
+    padding: 0.07rem 0.55rem; }
 
 .btn-delete-exp-edu {
   padding: 0.4rem 0.6rem;
-  font-size: 0.8rem; }
+  font-size: 0.8rem;
+  border: 1px red; }
 
 .btn-delete-profile {
   width: max-content;

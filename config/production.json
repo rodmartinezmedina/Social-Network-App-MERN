@@ -1,0 +1,7 @@
+{
+  "mongoURI": "mongodb+srv://rodrigo2:Mecagoenelcovid666@mern-dev-social-network.fvtex.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "f89fd38845c1c24d876e",
+  "githubSecret": "f355794b475e161f51ac23558df1f673ef81d898",
+  "githubToken": "5c9bf206e9e761a12d87d5eafd9ead618b18c952"
+}

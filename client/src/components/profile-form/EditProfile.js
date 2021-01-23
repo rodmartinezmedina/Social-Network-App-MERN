@@ -4,20 +4,22 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
-import { CLOUD_NAME, CLOUDINARY_API_KEY } from "../../.env";
+// import { CLOUD_NAME, CLOUDINARY_API_KEY } from "../../.env";
+// import { CLOUD_NAME, CLOUDINARY_API_KEY } from "../../.env";
 
-const NAME_OF_UPLOAD_PRESET = "xdshqlct";
-const MY_CLOUD_NAME = "dvioc75zu";
+
+const THE_CLOUD_NAME = `${process.env.CLOUD_NAME}`
+const THE_UPLOAD_PRESET = `${process.env.NAME_OF_UPLOAD_PRESET}`
 
 async function uploadImage(file) {
   const data = new FormData();
   data.append("file", file);
   // data.append("api_key", `${API_KEY}`);
   // data.append("cloud_name", fileUrl);
-  data.append("upload_preset", NAME_OF_UPLOAD_PRESET);
+  data.append("upload_preset", THE_UPLOAD_PRESET);
 
   const res = await fetch(
-    `https://api.cloudinary.com/v1_1/dvioc75zu/image/upload`,
+    `https://api.cloudinary.com/v1_1/${THE_CLOUD_NAME}/image/upload`,
     {
       method: "POST",
       body: data,
@@ -137,7 +139,7 @@ const EditProfile = ({
       <form
         className="form"
         onSubmit={(e) => onSubmit(e)}
-        // encType="multipart/form-data"
+      // encType="multipart/form-data"
       >
         <div className="form-group">
           <select name="status" value={status} onChange={(e) => onChange(e)}>

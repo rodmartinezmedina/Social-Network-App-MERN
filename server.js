@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 
 const express = require("express");
 const connectDB = require("./config/db");
+const path = require ('path');
+
 const app = express();
 
 //
@@ -14,7 +16,8 @@ connectDB();
 //Init Middleware
 app.use(express.json({ extended: false }));
 
-app.get("/", (req, res) => res.send("API Running"));
+// This line was used during development
+// app.get("/", (req, res) => res.send("API Running"));
 
 //Define Routes
 app.use("/api/users", require("./routes/api/usersRoute"));
@@ -22,6 +25,17 @@ app.use("/api/profile", require("./routes/api/profileRoute"));
 app.use("/api/posts", require("./routes/api/postsRoute"));
 app.use("/api/auth", require("./routes/api/authRoute"));
 app.use("/api/cloudinary", require("./routes/api/cloudinaryRoute"));
+
+// Serve static assets in production
+if(process.env.NODE_ENV === 'production' ) {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req,res) => {
+    res.sendFile(path.resolve(_dirname, 'client', 'build', 'index.html'));
+  });
+}
+
 
 const PORT = process.env.PORT || 5000;
 
