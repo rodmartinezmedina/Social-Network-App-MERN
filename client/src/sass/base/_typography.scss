@@ -15,6 +15,9 @@
 
 .font2 {
   font-family: 'Roboto';
+  &-light {
+    font-weight: 300;
+  }
   &-reg {
     font-weight: 400;
   }
