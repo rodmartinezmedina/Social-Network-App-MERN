@@ -5,13 +5,6 @@
       'header'
       'actions'
       'main';
-    // "delete";
-    // grid-template-areas:
-    //   "header header header header "
-    //   "actions actions actions actions "
-    //   "card experience experience experience "
-    //   "card education education education "
-    //   "delete delete delete delete  ";
     grid-gap: 1rem;
   }
 
@@ -37,9 +30,6 @@
   &-actions-list {
     grid-area: actions;
     text-align: center;
-    // justify-content: center;
-    // align-items: center;
-    // align-content: center;
   }
 
   // MAIN CONTAINER
@@ -47,7 +37,6 @@
     grid-area: main;
     display: flex;
     flex-direction: row;
-    // grid-area: "card experience" "card education";
   }
 
   // ASIDE CONTAINER
@@ -184,12 +173,6 @@
   padding: 0.07rem 0.5rem;
   transition: 0.2s ease-in;
 
-  // background-image: linear-gradient(
-  //   to right,
-  //   $primary-color,
-  //   $primary-color-dark
-  // );
-  // color: $white-color;
   color: $primary-color;
   border: solid $primary-color 1.7px;
   transition: background-image 0.4s linear;
@@ -200,18 +183,11 @@
   }
 
   &:hover {
-    // width: 2rem;
-    // height:2rem;
     font-size: 1.1rem;
     font-weight: 700;
     padding: 0.1rem 0.5rem;
     border: solid 2.3px !important;
     padding: 0.07rem 0.55rem;
-    // background-image: linear-gradient(
-    //   to right,
-    //   $primary-color,
-    //   $primary-color-light
-    // );
   }
 }
 
@@ -222,7 +198,6 @@
 }
 
 .btn-delete-profile {
-  // grid-area: delete;
   width: max-content;
   text-align: center;
   display: flex;
@@ -230,9 +205,6 @@
   &:hover {
     background-color: red !important;
   }
-  // align-self: center;
-  // grid-column: 2 / 3;
-  // grid-row: 6 /7;
 }
 
 // /* Mobile Styles */
@@ -243,9 +215,6 @@
         width: 170px;
       }
     }
-
-    // &--edu-and-exp-container {
-    // }
 
     &-exp-container {
       h2 {

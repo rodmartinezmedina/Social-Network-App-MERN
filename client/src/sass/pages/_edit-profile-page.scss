@@ -6,20 +6,16 @@
   // text-align: center;
 
   > h1 {
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-weight: 500;
     margin-bottom: 0;
     text-align: center;
   }
 
   > p {
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-weight: 400;
     color: $primary-color-light;
     text-align: center;
-  }
-
-  textarea {
-    // text-align: center;
   }
 }
